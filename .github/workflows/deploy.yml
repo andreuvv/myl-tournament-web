@@ -31,7 +31,7 @@ jobs:
     - name: Build web
       run: flutter build web --release --base-href "/myl-tournament-web/"
       
-      - name: Add .nojekyll file
+    - name: Add .nojekyll file
       run: touch build/web/.nojekyll
       
     - name: Upload artifact
