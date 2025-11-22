@@ -22,7 +22,7 @@ class PlaceholderView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          const Text("Esta sección está bajo construcción mágica."),
+          const Text("Los magos del código están trabajando aquí."),
         ],
       ),
     );
