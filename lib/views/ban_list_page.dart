@@ -20,96 +20,95 @@ class BanListPage extends StatelessWidget {
           children: [
             // Main Tabs (Formats)
             Container(
-              color: AppColors.beige,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: BanListFormat.values.map((format) {
-                    final isSelected = format == selectedFormat;
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 4, vertical: 8),
-                      child: Material(
-                        color: isSelected
-                            ? AppColors.sageGreen
-                            : AppColors.coalGrey,
-                        borderRadius: BorderRadius.circular(8),
-                        child: InkWell(
-                          onTap: () => controller.selectFormat(format),
-                          borderRadius: BorderRadius.circular(8),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 12),
-                            child: Text(
-                              format.displayName,
-                              style: TextStyle(
-                                color: isSelected
-                                    ? AppColors.coalGrey
-                                    : AppColors.beige,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+              color: AppColors.coalGrey,
+              padding: const EdgeInsets.all(8),
+              child: Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                alignment: WrapAlignment.center,
+                children: BanListFormat.values.map((format) {
+                  final isSelected = format == selectedFormat;
+                  return Material(
+                    color: isSelected ? AppColors.sageGreen : AppColors.beige,
+                    borderRadius: BorderRadius.circular(8),
+                    child: InkWell(
+                      onTap: () => controller.selectFormat(format),
+                      borderRadius: BorderRadius.circular(8),
+                      child: Container(
+                        constraints: const BoxConstraints(minWidth: 230),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 12),
+                        child: Text(
+                          format.displayName,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: AppColors.coalGrey,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
-                    );
-                  }).toList(),
-                ),
+                    ),
+                  );
+                }).toList(),
               ),
             ),
 
             // Sub Tabs (Categories)
-            StreamBuilder<BanListCategory>(
-              stream: controller.categoryStream,
-              initialData: controller.selectedCategory,
-              builder: (context, categorySnapshot) {
-                final selectedCategory =
-                    categorySnapshot.data ?? BanListCategory.banned;
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32),
+              child: StreamBuilder<BanListCategory>(
+                stream: controller.categoryStream,
+                initialData: controller.selectedCategory,
+                builder: (context, categorySnapshot) {
+                  final selectedCategory =
+                      categorySnapshot.data ?? BanListCategory.banned;
 
-                return Container(
-                  color: AppColors.ocher,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: BanListCategory.values.map((category) {
-                      final isSelected = category == selectedCategory;
-                      return Expanded(
-                        child: Material(
-                          color: Colors.transparent,
-                          child: InkWell(
-                            onTap: () => controller.selectCategory(category),
-                            child: Container(
-                              padding: const EdgeInsets.symmetric(vertical: 12),
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  bottom: BorderSide(
-                                    color: isSelected
-                                        ? AppColors.brickRed
-                                        : Colors.transparent,
-                                    width: 3,
+                  return Container(
+                    color: AppColors.coalGrey,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: BanListCategory.values.map((category) {
+                        final isSelected = category == selectedCategory;
+                        return Expanded(
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () => controller.selectCategory(category),
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 12),
+                                decoration: BoxDecoration(
+                                  border: Border(
+                                    bottom: BorderSide(
+                                      color: isSelected
+                                          ? AppColors.brickRed
+                                          : Colors.transparent,
+                                      width: 3,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              child: Text(
-                                category.displayName,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: isSelected
-                                      ? AppColors.coalGrey
-                                      : AppColors.coalGrey
-                                          .withValues(alpha: 0.6),
-                                  fontWeight: isSelected
-                                      ? FontWeight.bold
-                                      : FontWeight.normal,
+                                child: Text(
+                                  category.displayName,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: isSelected
+                                        ? AppColors.beige
+                                        : AppColors.white
+                                            .withValues(alpha: 0.6),
+                                    fontWeight: isSelected
+                                        ? FontWeight.bold
+                                        : FontWeight.normal,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                );
-              },
+                        );
+                      }).toList(),
+                    ),
+                  );
+                },
+              ),
             ),
 
             // Content Area
