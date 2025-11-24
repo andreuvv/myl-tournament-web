@@ -50,7 +50,7 @@ class _MainControllerState extends State<MainController> {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: const [
-            Icon(Icons.shield, color: AppColors.gold),
+            Icon(Icons.shield, color: AppColors.coalGrey),
             SizedBox(width: 10),
             Text(
               "Premier Mitológico",
@@ -58,7 +58,6 @@ class _MainControllerState extends State<MainController> {
             ),
           ],
         ),
-        // El botón hamburguesa se genera automáticamente por el Drawer
       ),
       drawer: AppDrawer(
         selectedOption: _selectedOption,

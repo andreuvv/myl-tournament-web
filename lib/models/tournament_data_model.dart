@@ -4,6 +4,8 @@ class TournamentData {
   final DateTime date;
   final String locationName;
   final String address;
+  final double latitude;
+  final double longitude;
 
   TournamentData({
     required this.title,
@@ -11,5 +13,7 @@ class TournamentData {
     required this.date,
     required this.locationName,
     required this.address,
+    required this.latitude,
+    required this.longitude,
   });
 }

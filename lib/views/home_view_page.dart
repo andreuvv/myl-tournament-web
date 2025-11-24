@@ -18,18 +18,17 @@ class HomeView extends StatelessWidget {
         children: [
           const SizedBox(height: 20),
 
-          // Título Hero
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.gold),
+              border: Border.all(color: AppColors.petrolBlue),
               borderRadius: BorderRadius.circular(20),
-              color: AppColors.gold.withValues(alpha: 0.1),
+              color: AppColors.sageGreen,
             ),
             child: const Text(
               "PRÓXIMO TORNEO OFICIAL",
               style: TextStyle(
-                color: AppColors.forestDark,
+                color: AppColors.coalGrey,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 1.2,
               ),
@@ -42,7 +41,7 @@ class HomeView extends StatelessWidget {
             style: const TextStyle(
               fontSize: 42,
               fontWeight: FontWeight.w900,
-              color: AppColors.forestDark,
+              color: AppColors.white,
               height: 1.1,
             ),
           ),
@@ -52,7 +51,7 @@ class HomeView extends StatelessWidget {
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 18,
-              color: AppColors.forestLight,
+              color: AppColors.white,
               fontStyle: FontStyle.italic,
             ),
           ),
@@ -67,9 +66,9 @@ class HomeView extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: AppColors.parchment,
+                  color: AppColors.beige,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: AppColors.gold, width: 2),
+                  border: Border.all(color: AppColors.ocher, width: 2),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withValues(alpha: 0.1),
@@ -82,7 +81,10 @@ class HomeView extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     children: [
-                      Icon(Icons.info),
+                      Icon(
+                        Icons.info,
+                        color: AppColors.ocher,
+                      ),
                       Text("Información del torneo"),
                     ],
                   ),
@@ -90,9 +92,9 @@ class HomeView extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: AppColors.parchment,
+                  color: AppColors.beige,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: AppColors.gold, width: 2),
+                  border: Border.all(color: AppColors.ocher, width: 2),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withValues(alpha: 0.1),
@@ -104,15 +106,21 @@ class HomeView extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: [Icon(Icons.block), Text("Ban List Actualizada")],
+                    children: [
+                      Icon(
+                        Icons.block,
+                        color: AppColors.brickRed,
+                      ),
+                      Text("Ban List Actualizada")
+                    ],
                   ),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
-                  color: AppColors.parchment,
+                  color: AppColors.beige,
                   borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: AppColors.gold, width: 2),
+                  border: Border.all(color: AppColors.ocher, width: 2),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.black.withValues(alpha: 0.1),
@@ -124,7 +132,13 @@ class HomeView extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
-                    children: [Icon(Icons.layers), Text("Formatos de Juego")],
+                    children: [
+                      Icon(
+                        Icons.layers,
+                        color: AppColors.petrolBlue,
+                      ),
+                      Text("Información de formatos")
+                    ],
                   ),
                 ),
               ),
@@ -165,12 +179,12 @@ class HomeView extends StatelessWidget {
             padding: const EdgeInsets.all(30),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
-                colors: [AppColors.forestDark, AppColors.forestLight],
+                colors: [AppColors.coalGrey, AppColors.coalGrey],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: AppColors.gold, width: 2),
+              border: Border.all(color: AppColors.ocher, width: 2),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.2),
@@ -184,7 +198,7 @@ class HomeView extends StatelessWidget {
                 const Text(
                   "¿Tu estrategia está lista?",
                   style: TextStyle(
-                    color: AppColors.gold,
+                    color: AppColors.ocher,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                   ),
@@ -198,7 +212,7 @@ class HomeView extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: () {}, // Aquí iría la navegación al deck builder
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.crimson,
+                    backgroundColor: AppColors.brickRed,
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(
                       horizontal: 30,

@@ -12,20 +12,20 @@ class TcgApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        scaffoldBackgroundColor: AppColors.parchment,
-        primaryColor: AppColors.forestDark,
+        scaffoldBackgroundColor: AppColors.coalGrey,
+        primaryColor: AppColors.sageGreen,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: AppColors.forestDark,
-          primary: AppColors.forestDark,
-          secondary: AppColors.gold,
-          error: AppColors.crimson,
-          surface: AppColors.parchment,
+          seedColor: AppColors.sageGreen,
+          primary: AppColors.sageGreen,
+          secondary: AppColors.ocher,
+          error: AppColors.brickRed,
+          surface: AppColors.beige,
         ),
         fontFamily:
             'Georgia', // Usamos serif por defecto para el toque "Fantasy"
         appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.forestDark,
-          foregroundColor: AppColors.gold,
+          backgroundColor: AppColors.ocher,
+          foregroundColor: AppColors.coalGrey,
           centerTitle: true,
         ),
       ),

@@ -8,6 +8,8 @@ final currentTournament = TournamentData(
   date: DateTime(2025, 12, 13, 18, 0), // 13 Dic 2025, 18:00 PM
   locationName: "Hogar de los Karens",
   address: "Las Tórtolas 3273, Macul, Santiago",
+  latitude: -33.499491684979965,
+  longitude: -70.59950668241702,
 );
 
 enum MenuOption { home, banList, formats, info, deckBuilder }

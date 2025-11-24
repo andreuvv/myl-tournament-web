@@ -45,9 +45,9 @@ class _CountdownCardState extends State<CountdownCard> {
     return Container(
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: AppColors.parchment,
+        color: AppColors.beige,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.gold, width: 2),
+        border: Border.all(color: AppColors.ocher, width: 2),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.1),
@@ -61,19 +61,19 @@ class _CountdownCardState extends State<CountdownCard> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
-              Icon(Icons.timer, color: AppColors.crimson),
+              Icon(Icons.timer, color: AppColors.brickRed),
               SizedBox(width: 8),
               Text(
                 "TIEMPO RESTANTE",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: AppColors.forestDark,
+                  color: AppColors.coalGrey,
                   letterSpacing: 1,
                 ),
               ),
             ],
           ),
-          const Divider(color: AppColors.gold),
+          const Divider(color: AppColors.ocher),
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -92,20 +92,20 @@ class _CountdownCardState extends State<CountdownCard> {
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: AppColors.parchmentDark,
+              color: AppColors.beige,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Column(
               children: const [
                 Text(
                   "Fecha de Inicio",
-                  style: TextStyle(fontSize: 12, color: AppColors.forestLight),
+                  style: TextStyle(fontSize: 12, color: AppColors.coalGrey),
                 ),
                 Text(
                   "13 Diciembre, 2025 - 18:00 hrs",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: AppColors.crimson,
+                    color: AppColors.petrolBlue,
                   ),
                 ),
               ],
@@ -137,16 +137,16 @@ class _TimeBox extends StatelessWidget {
           height: 60,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: AppColors.forestDark,
+            color: AppColors.coalGrey,
             borderRadius: BorderRadius.circular(8),
             border: isAccent
-                ? Border.all(color: AppColors.crimson, width: 2)
-                : Border.all(color: AppColors.gold),
+                ? Border.all(color: AppColors.brickRed, width: 2)
+                : Border.all(color: AppColors.ocher),
           ),
           child: Text(
             value.toString().padLeft(2, '0'),
             style: TextStyle(
-              color: isAccent ? AppColors.gold : Colors.white,
+              color: isAccent ? AppColors.ocher : Colors.white,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),

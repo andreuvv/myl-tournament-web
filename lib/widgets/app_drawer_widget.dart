@@ -15,21 +15,21 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: AppColors.parchment,
+      backgroundColor: AppColors.beige,
       child: Column(
         children: [
           DrawerHeader(
             decoration: const BoxDecoration(
-              color: AppColors.forestDark,
+              color: AppColors.coalGrey,
               border: Border(
-                bottom: BorderSide(color: AppColors.gold, width: 4),
+                bottom: BorderSide(color: AppColors.ocher, width: 4),
               ),
             ),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Icon(Icons.emoji_events, size: 48, color: AppColors.gold),
+                  Icon(Icons.emoji_events, size: 48, color: AppColors.ocher),
                   SizedBox(height: 10),
                   Text(
                     "PREMIER MITOLÓGICO",
@@ -72,7 +72,7 @@ class AppDrawer extends StatelessWidget {
                   isSelected: selectedOption == MenuOption.info,
                   onTap: () => onSelect(MenuOption.info),
                 ),
-                const Divider(color: AppColors.gold),
+                const Divider(color: AppColors.ocher),
                 _MenuTile(
                   icon: Icons.build_circle,
                   title: "Deck Builder",
@@ -114,30 +114,29 @@ class _MenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = isHighlight
-        ? AppColors.crimson
-        : (isSelected ? AppColors.forestDark : Colors.grey[700]);
+        ? AppColors.brickRed
+        : (isSelected ? AppColors.coalGrey : Colors.grey[700]);
 
     return ListTile(
       leading: Icon(
         icon,
-        color: isSelected || isHighlight ? AppColors.gold : color,
+        color: isSelected || isHighlight ? AppColors.ocher : color,
       ),
       title: Text(
         title,
         style: TextStyle(
           color: color,
-          fontWeight: isSelected || isHighlight
-              ? FontWeight.bold
-              : FontWeight.normal,
+          fontWeight:
+              isSelected || isHighlight ? FontWeight.bold : FontWeight.normal,
           fontSize: 16,
         ),
       ),
       selected: isSelected,
-      selectedTileColor: AppColors.gold.withValues(alpha: 0.2),
+      selectedTileColor: AppColors.ocher.withValues(alpha: 0.2),
       onTap: onTap,
       contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
       shape: isSelected
-          ? const Border(left: BorderSide(color: AppColors.gold, width: 4))
+          ? const Border(left: BorderSide(color: AppColors.ocher, width: 4))
           : null,
     );
   }

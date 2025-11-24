@@ -18,11 +18,15 @@ class PlaceholderView extends StatelessWidget {
             style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: AppColors.forestDark,
+              color: AppColors.white,
             ),
           ),
           const SizedBox(height: 10),
-          const Text("Los magos del código están trabajando aquí."),
+          const Text("Los magos del código están trabajando aquí.",
+              style: TextStyle(
+                fontSize: 16,
+                color: AppColors.white,
+              )),
         ],
       ),
     );
