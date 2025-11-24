@@ -35,7 +35,7 @@ class MainView extends StatelessWidget {
         selectedOption: selectedOption,
         onSelect: onMenuSelect,
       ),
-      body: content,
+      body: SelectionArea(child: content),
     );
   }
 }

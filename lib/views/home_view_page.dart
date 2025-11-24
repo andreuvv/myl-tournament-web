@@ -35,7 +35,7 @@ class HomeView extends StatelessWidget {
               "PRÓXIMO TORNEO OFICIAL",
               style: TextStyle(
                 color: AppColors.coalGrey,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w900,
                 letterSpacing: 1.2,
               ),
             ),
@@ -96,29 +96,37 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: AppColors.beige,
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: AppColors.ocher, width: 2),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Icon(
-                        Icons.block,
-                        color: AppColors.brickRed,
+              InkWell(
+                onTap: () {
+                  if (onNavigate != null) {
+                    onNavigate!(MenuOption.banList);
+                  }
+                },
+                borderRadius: BorderRadius.circular(16),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.beige,
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(color: AppColors.ocher, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.1),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
                       ),
-                      Text("Ban List Actualizada")
                     ],
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.block,
+                          color: AppColors.brickRed,
+                        ),
+                        Text("Ban List Actualizada")
+                      ],
+                    ),
                   ),
                 ),
               ),

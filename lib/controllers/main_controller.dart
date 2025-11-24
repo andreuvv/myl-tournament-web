@@ -1,12 +1,17 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:myl_app_web/controllers/ban_list_controller.dart';
 import 'package:myl_app_web/static/mock_data.dart';
+import 'package:myl_app_web/views/ban_list_page.dart';
 import 'package:myl_app_web/views/home_view_page.dart';
 import 'package:myl_app_web/widgets/placeholder_widget.dart';
 
 class MainController {
   final _selectedOptionController = StreamController<MenuOption>.broadcast();
   MenuOption _selectedOption = MenuOption.home;
+
+  // Sub-controllers
+  final BanListController banListController = BanListController();
 
   // Expose stream for listening
   Stream<MenuOption> get selectedOptionStream =>
@@ -29,7 +34,7 @@ class MainController {
           onNavigate: onNavigate,
         );
       case MenuOption.banList:
-        return const PlaceholderView(title: "Lista de Cartas Prohibidas");
+        return BanListPage(controller: banListController);
       case MenuOption.formats:
         return const PlaceholderView(title: "Formatos de Juego");
       case MenuOption.info:
@@ -42,5 +47,6 @@ class MainController {
   // Dispose method to clean up stream
   void dispose() {
     _selectedOptionController.close();
+    banListController.dispose();
   }
 }

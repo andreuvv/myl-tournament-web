@@ -114,7 +114,7 @@ class _MenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = isHighlight
-        ? AppColors.brickRed
+        ? AppColors.petrolBlue
         : (isSelected ? AppColors.coalGrey : Colors.grey[700]);
 
     return ListTile(

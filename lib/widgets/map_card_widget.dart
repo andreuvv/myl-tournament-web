@@ -10,10 +10,6 @@ class MapCard extends StatelessWidget {
 
   MapCard({super.key, required this.data}) {
     final viewId = 'google-maps-${data.latitude}-${data.longitude}';
-
-    // Register the iframe view factory
-    // Note: Duplicate registrations are ignored by the platform view registry
-    // ignore: undefined_prefixed_name
     try {
       ui_web.platformViewRegistry.registerViewFactory(
         viewId,
@@ -24,14 +20,13 @@ class MapCard extends StatelessWidget {
             ..style.height = '100%'
             ..src = 'https://www.google.com/maps/embed/v1/place?'
                 'key=${ApiKeys.googleMapsApiKey}'
-                //'&q=${data.latitude},${data.longitude}'
                 '&q=Las Tórtolas 3273, Macul, Santiago'
                 '&zoom=16';
           return iframe;
         },
       );
     } catch (e) {
-      // View already registered, ignore
+      // Ignore duplicate registration errors
     }
   }
 
