@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myl_app_web/app_colors.dart';
 import 'package:myl_app_web/models/tournament_data_model.dart';
 import 'package:myl_app_web/config/api_keys.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'dart:html' as html;
+import 'package:web/web.dart' as web;
 import 'dart:ui_web' as ui_web;
 
 class MapCard extends StatefulWidget {
@@ -27,22 +26,17 @@ class _MapCardState extends State<MapCard> {
     // ignore: undefined_prefixed_name
     ui_web.platformViewRegistry.registerViewFactory(
       viewId,
-      (int _) => html.IFrameElement()
-        ..style.border = 'none'
-        ..src = 'https://www.google.com/maps/embed/v1/place?'
-            'key=${ApiKeys.googleMapsApiKey}'
-            '&q=${widget.data.latitude},${widget.data.longitude}'
-            '&zoom=15',
+      (int _) {
+        final iframe = web.HTMLIFrameElement()
+          ..style.border = 'none'
+          ..src = 'https://www.google.com/maps/embed/v1/place?'
+              'key=${ApiKeys.googleMapsApiKey}'
+              //'&q=${widget.data.latitude},${widget.data.longitude}'
+              '&q=Las Tórtolas 3273, Macul, Santiago'
+              '&zoom=16';
+        return iframe;
+      },
     );
-  }
-
-  Future<void> _openInGoogleMaps() async {
-    final url = Uri.parse(
-      'https://www.google.com/maps/search/?api=1&query=${widget.data.latitude},${widget.data.longitude}',
-    );
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url, mode: LaunchMode.externalApplication);
-    }
   }
 
   @override
@@ -97,33 +91,14 @@ class _MapCardState extends State<MapCard> {
               ],
             ),
           ),
-          // Google Maps Embed with button overlay
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius:
-                    const BorderRadius.vertical(bottom: Radius.circular(14)),
-                child: SizedBox(
-                  height: 200,
-                  child: HtmlElementView(viewType: viewId),
-                ),
-              ),
-              // Button overlay
-              Positioned(
-                bottom: 16,
-                right: 16,
-                child: ElevatedButton.icon(
-                  onPressed: _openInGoogleMaps,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.petrolBlue,
-                    foregroundColor: Colors.white,
-                    elevation: 4,
-                  ),
-                  icon: const Icon(Icons.open_in_new),
-                  label: const Text("Abrir en Maps"),
-                ),
-              ),
-            ],
+          // Google Maps Embed
+          ClipRRect(
+            borderRadius:
+                const BorderRadius.vertical(bottom: Radius.circular(14)),
+            child: SizedBox(
+              height: 200,
+              child: HtmlElementView(viewType: viewId),
+            ),
           ),
         ],
       ),
