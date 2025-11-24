@@ -1,7 +1,6 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:myl_app_web/app_colors.dart';
+import 'package:myl_app_web/controllers/countdown_controller.dart';
 
 class CountdownCard extends StatefulWidget {
   final DateTime targetDate;
@@ -13,106 +12,104 @@ class CountdownCard extends StatefulWidget {
 }
 
 class _CountdownCardState extends State<CountdownCard> {
-  late Timer _timer;
-  late Duration _timeLeft;
+  late CountdownController _controller;
 
   @override
   void initState() {
     super.initState();
-    _calculateTime();
-    _timer = Timer.periodic(
-      const Duration(seconds: 1),
-      (timer) => _calculateTime(),
-    );
-  }
-
-  void _calculateTime() {
-    final now = DateTime.now();
-    setState(() {
-      _timeLeft = widget.targetDate.difference(now);
-      if (_timeLeft.isNegative) _timeLeft = Duration.zero;
-    });
+    _controller = CountdownController(widget.targetDate);
   }
 
   @override
   void dispose() {
-    _timer.cancel();
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: AppColors.beige,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: AppColors.ocher, width: 2),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Icon(Icons.timer, color: AppColors.brickRed),
-              SizedBox(width: 8),
-              Text(
-                "TIEMPO RESTANTE",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.coalGrey,
-                  letterSpacing: 1,
-                ),
+    return StreamBuilder<Duration>(
+      stream: _controller.timeStream,
+      initialData: _controller.initialTime,
+      builder: (context, snapshot) {
+        final timeLeft = snapshot.data ?? Duration.zero;
+
+        return Container(
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: AppColors.beige,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: AppColors.ocher, width: 2),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.1),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
               ),
             ],
           ),
-          const Divider(color: AppColors.ocher),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          child: Column(
             children: [
-              _TimeBox(value: _timeLeft.inDays, label: "Días"),
-              _TimeBox(value: _timeLeft.inHours % 24, label: "Horas"),
-              _TimeBox(value: _timeLeft.inMinutes % 60, label: "Min"),
-              _TimeBox(
-                value: _timeLeft.inSeconds % 60,
-                label: "Seg",
-                isAccent: true,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(Icons.timer, color: AppColors.brickRed),
+                  SizedBox(width: 8),
+                  Text(
+                    "TIEMPO RESTANTE",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.coalGrey,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ],
+              ),
+              const Divider(color: AppColors.ocher),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _TimeBox(value: timeLeft.inDays, label: "Días"),
+                  _TimeBox(value: timeLeft.inHours % 24, label: "Horas"),
+                  _TimeBox(value: timeLeft.inMinutes % 60, label: "Min"),
+                  _TimeBox(
+                    value: timeLeft.inSeconds % 60,
+                    label: "Seg",
+                    isAccent: true,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Container(
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  children: const [
+                    Text(
+                      "Fecha de Inicio",
+                      style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.coalGrey,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "13 Diciembre, 2025 - 18:00 hrs",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.petrolBlue,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
-          const SizedBox(height: 20),
-          Container(
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: AppColors.beige,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Column(
-              children: const [
-                Text(
-                  "Fecha de Inicio",
-                  style: TextStyle(fontSize: 12, color: AppColors.coalGrey),
-                ),
-                Text(
-                  "13 Diciembre, 2025 - 18:00 hrs",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.petrolBlue,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
@@ -137,7 +134,7 @@ class _TimeBox extends StatelessWidget {
           height: 60,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: AppColors.coalGrey,
+            color: AppColors.sageGreen,
             borderRadius: BorderRadius.circular(8),
             border: isAccent
                 ? Border.all(color: AppColors.brickRed, width: 2)
@@ -146,7 +143,7 @@ class _TimeBox extends StatelessWidget {
           child: Text(
             value.toString().padLeft(2, '0'),
             style: TextStyle(
-              color: isAccent ? AppColors.ocher : Colors.white,
+              color: isAccent ? AppColors.coalGrey : Colors.white,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),

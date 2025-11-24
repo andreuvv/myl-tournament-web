@@ -5,39 +5,37 @@ import 'package:myl_app_web/config/api_keys.dart';
 import 'package:web/web.dart' as web;
 import 'dart:ui_web' as ui_web;
 
-class MapCard extends StatefulWidget {
+class MapCard extends StatelessWidget {
   final TournamentData data;
 
-  const MapCard({super.key, required this.data});
+  MapCard({super.key, required this.data}) {
+    final viewId = 'google-maps-${data.latitude}-${data.longitude}';
 
-  @override
-  State<MapCard> createState() => _MapCardState();
-}
-
-class _MapCardState extends State<MapCard> {
-  late String viewId;
-
-  @override
-  void initState() {
-    super.initState();
-    viewId = 'google-maps-${widget.data.latitude}-${widget.data.longitude}';
-
-    // Register the iframe view
+    // Register the iframe view factory
+    // Note: Duplicate registrations are ignored by the platform view registry
     // ignore: undefined_prefixed_name
-    ui_web.platformViewRegistry.registerViewFactory(
-      viewId,
-      (int _) {
-        final iframe = web.HTMLIFrameElement()
-          ..style.border = 'none'
-          ..src = 'https://www.google.com/maps/embed/v1/place?'
-              'key=${ApiKeys.googleMapsApiKey}'
-              //'&q=${widget.data.latitude},${widget.data.longitude}'
-              '&q=Las Tórtolas 3273, Macul, Santiago'
-              '&zoom=16';
-        return iframe;
-      },
-    );
+    try {
+      ui_web.platformViewRegistry.registerViewFactory(
+        viewId,
+        (int _) {
+          final iframe = web.HTMLIFrameElement()
+            ..style.border = 'none'
+            ..style.width = '100%'
+            ..style.height = '100%'
+            ..src = 'https://www.google.com/maps/embed/v1/place?'
+                'key=${ApiKeys.googleMapsApiKey}'
+                //'&q=${data.latitude},${data.longitude}'
+                '&q=Las Tórtolas 3273, Macul, Santiago'
+                '&zoom=16';
+          return iframe;
+        },
+      );
+    } catch (e) {
+      // View already registered, ignore
+    }
   }
+
+  String get _viewId => 'google-maps-${data.latitude}-${data.longitude}';
 
   @override
   Widget build(BuildContext context) {
@@ -78,14 +76,14 @@ class _MapCardState extends State<MapCard> {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  widget.data.locationName,
+                  data.locationName,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
                 ),
                 Text(
-                  widget.data.address,
+                  data.address,
                   style: const TextStyle(color: AppColors.coalGrey),
                 ),
               ],
@@ -97,7 +95,7 @@ class _MapCardState extends State<MapCard> {
                 const BorderRadius.vertical(bottom: Radius.circular(14)),
             child: SizedBox(
               height: 200,
-              child: HtmlElementView(viewType: viewId),
+              child: HtmlElementView(viewType: _viewId),
             ),
           ),
         ],

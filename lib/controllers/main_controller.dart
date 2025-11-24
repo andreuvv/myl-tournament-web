@@ -1,69 +1,46 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:myl_app_web/app_colors.dart';
 import 'package:myl_app_web/static/mock_data.dart';
 import 'package:myl_app_web/views/home_view_page.dart';
-import 'package:myl_app_web/widgets/app_drawer_widget.dart';
 import 'package:myl_app_web/widgets/placeholder_widget.dart';
 
-class MainController extends StatefulWidget {
-  const MainController({super.key});
-
-  @override
-  State<MainController> createState() => _MainControllerState();
-}
-
-class _MainControllerState extends State<MainController> {
+class MainController {
+  final _selectedOptionController = StreamController<MenuOption>.broadcast();
   MenuOption _selectedOption = MenuOption.home;
 
-  // Método para cambiar de página desde el menú
-  void _onMenuSelect(MenuOption option) {
-    setState(() {
-      _selectedOption = option;
-    });
-    Navigator.pop(context); // Cerrar el Drawer (Hamburguesa)
+  // Expose stream for listening
+  Stream<MenuOption> get selectedOptionStream =>
+      _selectedOptionController.stream;
+  MenuOption get selectedOption => _selectedOption;
+
+  // Method to change selected option
+  void selectOption(MenuOption option) {
+    _selectedOption = option;
+    _selectedOptionController.add(_selectedOption);
   }
 
-  @override
-  Widget build(BuildContext context) {
-    // Selección de la vista basada en el estado actual
-    Widget content;
-    switch (_selectedOption) {
+  // Get content widget for the selected option
+  Widget getContentForOption(
+      MenuOption option, Function(MenuOption) onNavigate) {
+    switch (option) {
       case MenuOption.home:
-        content = HomeView(tournament: currentTournament);
-        break;
+        return HomeView(
+          tournament: currentTournament,
+          onNavigate: onNavigate,
+        );
       case MenuOption.banList:
-        content = const PlaceholderView(title: "Lista de Cartas Prohibidas");
-        break;
+        return const PlaceholderView(title: "Lista de Cartas Prohibidas");
       case MenuOption.formats:
-        content = const PlaceholderView(title: "Formatos de Juego");
-        break;
+        return const PlaceholderView(title: "Formatos de Juego");
       case MenuOption.info:
-        content = const PlaceholderView(title: "Información del Torneo");
-        break;
+        return const PlaceholderView(title: "Información del Torneo");
       case MenuOption.deckBuilder:
-        content = const PlaceholderView(title: "Constructor de Mazos");
-        break;
+        return const PlaceholderView(title: "Constructor de Mazos");
     }
+  }
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: const [
-            Icon(Icons.shield, color: AppColors.coalGrey),
-            SizedBox(width: 10),
-            Text(
-              "Premier Mitológico",
-              style: TextStyle(fontWeight: FontWeight.bold, letterSpacing: 1.5),
-            ),
-          ],
-        ),
-      ),
-      drawer: AppDrawer(
-        selectedOption: _selectedOption,
-        onSelect: _onMenuSelect,
-      ),
-      body: content,
-    );
+  // Dispose method to clean up stream
+  void dispose() {
+    _selectedOptionController.close();
   }
 }

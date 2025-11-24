@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:myl_app_web/app_colors.dart';
 import 'package:myl_app_web/models/tournament_data_model.dart';
+import 'package:myl_app_web/static/mock_data.dart';
 import 'package:myl_app_web/widgets/countdown_card_widget.dart';
 import 'package:myl_app_web/widgets/map_card_widget.dart';
 
 class HomeView extends StatelessWidget {
   final TournamentData tournament;
+  final Function(MenuOption)? onNavigate;
 
-  const HomeView({super.key, required this.tournament});
+  const HomeView({
+    super.key,
+    required this.tournament,
+    this.onNavigate,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -210,7 +216,11 @@ class HomeView extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton.icon(
-                  onPressed: () {}, // Aquí iría la navegación al deck builder
+                  onPressed: () {
+                    if (onNavigate != null) {
+                      onNavigate!(MenuOption.deckBuilder);
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.brickRed,
                     foregroundColor: Colors.white,
