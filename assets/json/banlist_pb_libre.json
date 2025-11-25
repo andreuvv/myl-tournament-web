@@ -5,66 +5,66 @@
     {
       "name": "Curandera",
       "type": "Aliado",
-      "imageUrl": "https://scontent.fscl38-1.fna.fbcdn.net/v/t1.6435-9/115745074_1312251255833108_6651503079549284199_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=n9KNhrfhausQ7kNvwE-ZqI9&_nc_oc=AdnqQ6AjGBXhrHcweH7mITzsssF7gXEOKzbyJpy3B-NKKbNHoNcpOXLHpzspPykQ26_S2vPnLLgcgXdsJ4VyPWgu&_nc_zt=23&_nc_ht=scontent.fscl38-1.fna&_nc_gid=cesKJeB2g1Mg_tcSAzu3dg&oh=00_Afi8h0jEkQjTo3VeFhEuxySnd6-Ydr9pqDMUbJsV9_cjAg&oe=694C5423"
+      "imageUrl": "https://api.myl.cl/static/cards/43/055.png"
     },
     {
       "name": "Caballo Lunar",
       "type": "Talisman",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/19/059.png"
     },
     {
       "name": "Joyero",
       "type": "Talisman",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/93/145.png"
     },
     {
       "name": "Felipe II",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/93/056.png"
     },
     {
       "name": "Duendes",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/93/151.png"
     },
     {
       "name": "Juglares",
       "type": "Talisman",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/19/193.png"
     },
     {
       "name": "Tótem de Nwyre",
       "type": "Totem",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/93/144.png"
     },
     {
       "name": "Eolo",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/109/031.png"
     },
     {
       "name": "Marco Antonio",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/109/051.png"
     },
     {
       "name": "Red de Aracne",
       "type": "Talisman",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/109/136.png"
     },
     {
       "name": "Rómulo y Remo",
       "type": "Talisman",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/109/050.png"
     },
     {
       "name": "Hogar de Demonios",
       "type": "Talisman",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/109/090.png"
     },
     {
-      "name": "Daldriada",
-      "type": "Aliado",
+      "name": "Daldriada (Rework)",
+      "type": "Totem",
       "imageUrl": ""
     },
     {
