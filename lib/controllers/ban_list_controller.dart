@@ -10,11 +10,7 @@ enum BanListFormat {
   bloqueFuriaRacialLimitado,
 }
 
-enum BanListCategory {
-  banned,
-  limitedX1,
-  limitedX2,
-}
+enum BanListCategory { banned, limitedX1, limitedX2 }
 
 extension BanListFormatExtension on BanListFormat {
   String get displayName {
@@ -80,7 +76,7 @@ class BanListController {
 
   Future<void> _loadData(BanListFormat format) async {
     try {
-      final path = format.jsonFile;
+      final path = 'assets/${format.jsonFile}';
       print('Attempting to load: $path');
       final jsonString = await rootBundle.loadString(path);
       print('Successfully loaded JSON, length: ${jsonString.length}');
@@ -88,7 +84,8 @@ class BanListController {
       _currentData = BanListData.fromJson(jsonData);
       _dataController.add(_currentData);
       print(
-          'Data loaded successfully: ${_currentData?.banned.length} banned cards');
+        'Data loaded successfully: ${_currentData?.banned.length} banned cards',
+      );
     } catch (e, stackTrace) {
       print('Error loading ban list data: $e');
       print('Stack trace: $stackTrace');
