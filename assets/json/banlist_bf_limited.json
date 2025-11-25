@@ -1,0 +1,30 @@
+{
+  "format": "Bloque Furia Racial Limitado",
+  "lastUpdated": "2025-11-24",
+  "banned": [
+    {
+      "name": "Procesión",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Tridente de los Mares",
+      "type": "Arma",
+      "imageUrl": ""
+    }
+  ],
+  "limitedX1": [
+    {
+      "name": "Merodeador",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Morgause",
+      "type": "Aliado",
+      "imageUrl": ""
+    }
+  ],
+  "limitedX2": [
+  ]
+}

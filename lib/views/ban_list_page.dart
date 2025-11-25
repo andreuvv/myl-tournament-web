@@ -120,31 +120,132 @@ class BanListPage extends StatelessWidget {
                   final selectedCategory =
                       categorySnapshot.data ?? BanListCategory.banned;
 
-                  return Container(
-                    color: AppColors.coalGrey,
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            selectedFormat.displayName,
-                            style: const TextStyle(
-                              color: AppColors.beige,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-                          Text(
-                            selectedCategory.displayName,
-                            style: const TextStyle(
+                  return StreamBuilder(
+                    stream: controller.dataStream,
+                    initialData: controller.currentData,
+                    builder: (context, dataSnapshot) {
+                      final banListData = dataSnapshot.data;
+
+                      if (banListData == null) {
+                        return Container(
+                          color: AppColors.coalGrey,
+                          child: const Center(
+                            child: CircularProgressIndicator(
                               color: AppColors.ocher,
-                              fontSize: 18,
                             ),
                           ),
-                        ],
-                      ),
-                    ),
+                        );
+                      }
+
+                      // Get cards for selected category
+                      final cards = selectedCategory == BanListCategory.banned
+                          ? banListData.banned
+                          : selectedCategory == BanListCategory.limitedX1
+                              ? banListData.limitedX1
+                              : banListData.limitedX2;
+
+                      if (cards.isEmpty) {
+                        return Container(
+                          color: AppColors.coalGrey,
+                          child: Center(
+                            child: Text(
+                              'No hay cartas en esta categoría',
+                              style: const TextStyle(
+                                color: AppColors.beige,
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+
+                      return Container(
+                        color: AppColors.coalGrey,
+                        padding: const EdgeInsets.all(20),
+                        child: GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 200,
+                            childAspectRatio: 0.7,
+                            crossAxisSpacing: 16,
+                            mainAxisSpacing: 16,
+                          ),
+                          itemCount: cards.length,
+                          itemBuilder: (context, index) {
+                            final card = cards[index];
+                            return Container(
+                              decoration: BoxDecoration(
+                                color: AppColors.beige,
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                  color: AppColors.brickRed,
+                                  width: 1,
+                                ),
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      card.name,
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14,
+                                        color: AppColors.coalGrey,
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: card.imageUrl.isNotEmpty
+                                        ? Padding(
+                                            padding: const EdgeInsets.all(4.0),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  const BorderRadius.vertical(
+                                                      bottom:
+                                                          Radius.circular(8)),
+                                              child: Image.network(
+                                                card.imageUrl,
+                                                fit: BoxFit.contain,
+                                                errorBuilder: (context, error,
+                                                    stackTrace) {
+                                                  return Container(
+                                                    color: AppColors.coalGrey
+                                                        .withValues(alpha: 0.1),
+                                                    child: const Center(
+                                                      child: Icon(
+                                                        Icons.broken_image,
+                                                        color:
+                                                            AppColors.coalGrey,
+                                                        size: 48,
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              ),
+                                            ),
+                                          )
+                                        : Container(
+                                            color: AppColors.coalGrey
+                                                .withValues(alpha: 0.1),
+                                            child: const Center(
+                                              child: Icon(
+                                                Icons.image_not_supported,
+                                                color: AppColors.coalGrey,
+                                                size: 48,
+                                              ),
+                                            ),
+                                          ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      );
+                    },
                   );
                 },
               ),

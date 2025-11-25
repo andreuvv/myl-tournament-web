@@ -1,4 +1,7 @@
 import 'dart:async';
+import 'dart:convert';
+import 'package:flutter/services.dart';
+import 'package:myl_app_web/models/ban_list_data_model.dart';
 
 enum BanListFormat {
   primerBloqueRacialLibre,
@@ -26,6 +29,19 @@ extension BanListFormatExtension on BanListFormat {
         return 'Bloque Furia Racial Limitado';
     }
   }
+
+  String get jsonFile {
+    switch (this) {
+      case BanListFormat.primerBloqueRacialLibre:
+        return 'json/banlist_pb_libre.json';
+      case BanListFormat.primerBloqueRacialEdicion:
+        return 'json/banlist_pb_edition.json';
+      case BanListFormat.bloqueFuriaRacialLibre:
+        return 'json/banlist_bf_libre.json';
+      case BanListFormat.bloqueFuriaRacialLimitado:
+        return 'json/banlist_bf_limited.json';
+    }
+  }
 }
 
 extension BanListCategoryExtension on BanListCategory {
@@ -44,19 +60,41 @@ extension BanListCategoryExtension on BanListCategory {
 class BanListController {
   final _formatController = StreamController<BanListFormat>.broadcast();
   final _categoryController = StreamController<BanListCategory>.broadcast();
+  final _dataController = StreamController<BanListData?>.broadcast();
 
   BanListFormat _selectedFormat = BanListFormat.primerBloqueRacialLibre;
   BanListCategory _selectedCategory = BanListCategory.banned;
+  BanListData? _currentData;
 
   Stream<BanListFormat> get formatStream => _formatController.stream;
   Stream<BanListCategory> get categoryStream => _categoryController.stream;
+  Stream<BanListData?> get dataStream => _dataController.stream;
 
   BanListFormat get selectedFormat => _selectedFormat;
   BanListCategory get selectedCategory => _selectedCategory;
+  BanListData? get currentData => _currentData;
+
+  BanListController() {
+    _loadData(_selectedFormat);
+  }
+
+  Future<void> _loadData(BanListFormat format) async {
+    try {
+      final jsonString = await rootBundle.loadString(format.jsonFile);
+      final jsonData = json.decode(jsonString);
+      _currentData = BanListData.fromJson(jsonData);
+      _dataController.add(_currentData);
+    } catch (e) {
+      print('Error loading ban list data: $e');
+      _currentData = null;
+      _dataController.add(null);
+    }
+  }
 
   void selectFormat(BanListFormat format) {
     _selectedFormat = format;
     _formatController.add(_selectedFormat);
+    _loadData(format);
   }
 
   void selectCategory(BanListCategory category) {
@@ -67,5 +105,6 @@ class BanListController {
   void dispose() {
     _formatController.close();
     _categoryController.close();
+    _dataController.close();
   }
 }

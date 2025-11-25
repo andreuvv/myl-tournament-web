@@ -1,0 +1,385 @@
+{
+  "format": "Primer Bloque Racial Edición",
+  "lastUpdated": "2025-11-24",
+  "banned": [
+    {
+      "name": "Ataque a Traición",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Hogar de Demonios",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Fergus",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Bas-Pef",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Traficante de Esclavos",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Red de Aracne",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Avalon",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Guiza",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Juglares",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Marco Antonio",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "La Traición de Macalpin",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Vuelta a lo Primordial",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Felipe II",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Rómulo y Remo",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Cathbadh el Druida",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Nuh",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Dragón Dorado",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Rayos",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Daga de Bote",
+      "type": "Arma",
+      "imageUrl": ""
+    },
+    {
+      "name": "Joyero",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Eolo",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Forma de Toro",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Curandera",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Caballo Lunar",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Furias",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Urisk",
+      "type": "Aliado",
+      "imageUrl": ""
+    }
+  ],
+  "limitedX1": [
+    {
+      "name": "Tótem de Nwyre",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "César Augusto",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Gaitas",
+      "type": "Oro",
+      "imageUrl": ""
+    },
+    {
+      "name": "Baal-Zaphon",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Helios",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Carmix",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Bennu",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Leucrota",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Druida Maldito",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Qer-Her",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Antorcha Olímpica",
+      "type": "Oro",
+      "imageUrl": ""
+    },
+    {
+      "name": "Ulster",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Rito de Atón",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Aceite de Oliva",
+      "type": "Oro",
+      "imageUrl": ""
+    },
+    {
+      "name": "Marmita Druida",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Beni Hassam",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Ofrenda a los Dioses",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Pwyll",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Jinetes de Fuego",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "La Ilíada",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Morir de Pie",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Yelmo Alejandrino",
+      "type": "Arma",
+      "imageUrl": ""
+    },
+    {
+      "name": "Kobold",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Montuhopet II",
+      "type": "Aliado",
+      "imageUrl": ""
+    }
+  ],
+  "limitedX2": [
+    {
+      "name": "Fe Sin Límite",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Idmon el Adivino",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Amergin el Druida",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Tebas",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Mercaderes",
+      "type": "Oro",
+      "imageUrl": ""
+    },
+    {
+      "name": "Constantino",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Red de Plata",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Nut",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Goblin Stone",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Rea",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "País sin Luz",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Qadesh",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Ma'arrat an-Numán",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Afrodita",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Conand",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Haquika",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Zagreus",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Linaje Celta",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Papiros de Lahún",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Corona del Día",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Ptolomeo II",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Panteón",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Amosis II",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Cantobele",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Alejandro Magno",
+      "type": "Aliado",
+      "imageUrl": ""
+    }
+  ]
+}

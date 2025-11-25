@@ -1,0 +1,100 @@
+{
+  "format": "Bloque Furia Racial Libre",
+  "lastUpdated": "2025-11-24",
+  "banned": [
+    {
+      "name": "Moñai",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Humbaba",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Traición de Efialtes",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Mag Mell",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Ellen Trechend",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Merodeador",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Procesión",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Tír Na Nóg",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Camahueto",
+      "type": "Aliado",
+      "imageUrl": ""
+    }
+  ],
+  "limitedX1": [
+    {
+      "name": "Morgause",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Tezcatlipoca",
+      "type": "Totem",
+      "imageUrl": ""
+    },
+    {
+      "name": "Crear Dragón",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Cangrejo Cazador",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Reanimar",
+      "type": "Talisman",
+      "imageUrl": ""
+    }
+  ],
+  "limitedX2": [
+    {
+      "name": "Jormungdgander",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "Sinach",
+      "type": "Aliado",
+      "imageUrl": ""
+    },
+    {
+      "name": "An Torc Diabhalta",
+      "type": "Talisman",
+      "imageUrl": ""
+    },
+    {
+      "name": "Surt",
+      "type": "Aliado",
+      "imageUrl": ""
+    }
+  ]
+}
