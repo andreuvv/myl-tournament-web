@@ -80,12 +80,18 @@ class BanListController {
 
   Future<void> _loadData(BanListFormat format) async {
     try {
-      final jsonString = await rootBundle.loadString(format.jsonFile);
+      final path = format.jsonFile;
+      print('Attempting to load: $path');
+      final jsonString = await rootBundle.loadString(path);
+      print('Successfully loaded JSON, length: ${jsonString.length}');
       final jsonData = json.decode(jsonString);
       _currentData = BanListData.fromJson(jsonData);
       _dataController.add(_currentData);
-    } catch (e) {
+      print(
+          'Data loaded successfully: ${_currentData?.banned.length} banned cards');
+    } catch (e, stackTrace) {
       print('Error loading ban list data: $e');
+      print('Stack trace: $stackTrace');
       _currentData = null;
       _dataController.add(null);
     }
