@@ -18,6 +18,34 @@ class BanListPage extends StatelessWidget {
 
         return Column(
           children: [
+            const SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Para todos los formatos, las cartas sin raza, cartas con "SP" en su nombre o cartas con ★ no se pueden incluir en el mazo.',
+                  style: const TextStyle(
+                    color: AppColors.beige,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 32),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Las imagenes usadas son referenciales y pueden o no corresponder a la última versión impresa de la carta. \nLas siguientes restricciones aplican a cualquier versión de la carta.',
+                  style: const TextStyle(
+                    color: AppColors.beige,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
             // Main Tabs (Formats)
             Container(
               color: AppColors.coalGrey,

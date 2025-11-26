@@ -65,14 +65,20 @@ class _CountdownCardState extends State<CountdownCard> {
                   ),
                 ],
               ),
-              const Divider(color: AppColors.ocher),
+              const Divider(
+                color: AppColors.ocher,
+                thickness: 1,
+              ),
               const SizedBox(height: 20),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  _TimeBox(value: timeLeft.inDays, label: "Días"),
-                  _TimeBox(value: timeLeft.inHours % 24, label: "Horas"),
-                  _TimeBox(value: timeLeft.inMinutes % 60, label: "Min"),
+                  _TimeBox(value: timeLeft.inDays, label: "Días     "),
+                  const SizedBox(width: 12),
+                  _TimeBox(value: timeLeft.inHours % 24, label: "Horas     "),
+                  const SizedBox(width: 12),
+                  _TimeBox(value: timeLeft.inMinutes % 60, label: "Min     "),
+                  const SizedBox(width: 12),
                   _TimeBox(
                     value: timeLeft.inSeconds % 60,
                     label: "Seg",
@@ -96,8 +102,9 @@ class _CountdownCardState extends State<CountdownCard> {
                           color: AppColors.coalGrey,
                           fontWeight: FontWeight.bold),
                     ),
+                    SizedBox(height: 4),
                     Text(
-                      "13 Diciembre, 2025 - 18:00 hrs",
+                      "13 Diciembre, 2025 - 17:00 hrs",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: AppColors.petrolBlue,
@@ -129,24 +136,14 @@ class _TimeBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          width: 60,
-          height: 60,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: AppColors.sageGreen,
-            borderRadius: BorderRadius.circular(8),
-            border: isAccent
-                ? Border.all(color: AppColors.brickRed, width: 2)
-                : Border.all(color: AppColors.ocher),
-          ),
-          child: Text(
-            value.toString().padLeft(2, '0'),
-            style: TextStyle(
-              color: isAccent ? AppColors.coalGrey : Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+        Text(
+          isAccent
+              ? value.toString().padLeft(2, '0')
+              : '${value.toString().padLeft(2, '0')}  :',
+          style: TextStyle(
+            color: isAccent ? AppColors.coalGrey : AppColors.sageGreen,
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
           ),
         ),
         const SizedBox(height: 8),

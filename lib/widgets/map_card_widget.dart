@@ -69,6 +69,10 @@ class MapCard extends StatelessWidget {
                     ),
                   ],
                 ),
+                const Divider(
+                  color: AppColors.ocher,
+                  thickness: 1,
+                ),
                 const SizedBox(height: 10),
                 Text(
                   data.locationName,

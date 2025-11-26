@@ -22,9 +22,9 @@ class HomeView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(height: 20),
+          //const SizedBox(height: 20),
 
-          Container(
+          /* Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
               border: Border.all(color: AppColors.petrolBlue),
@@ -39,8 +39,8 @@ class HomeView extends StatelessWidget {
                 letterSpacing: 1.2,
               ),
             ),
-          ),
-          const SizedBox(height: 20),
+          ), */
+          //const SizedBox(height: 20),
           Text(
             tournament.title,
             textAlign: TextAlign.center,
@@ -56,107 +56,10 @@ class HomeView extends StatelessWidget {
             tournament.description,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 18,
-              color: AppColors.white,
+              fontSize: 14,
+              color: AppColors.beige,
               fontStyle: FontStyle.italic,
             ),
-          ),
-
-          const SizedBox(height: 40),
-
-          // Íconos de secciones principales
-          Wrap(
-            spacing: 16,
-            runSpacing: 16,
-            alignment: WrapAlignment.spaceEvenly,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: AppColors.beige,
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: AppColors.ocher, width: 2),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Icon(
-                        Icons.info,
-                        color: AppColors.ocher,
-                      ),
-                      Text("Información del torneo"),
-                    ],
-                  ),
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  if (onNavigate != null) {
-                    onNavigate!(MenuOption.banList);
-                  }
-                },
-                borderRadius: BorderRadius.circular(16),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: AppColors.beige,
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: AppColors.ocher, width: 2),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.1),
-                        blurRadius: 10,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.block,
-                          color: AppColors.brickRed,
-                        ),
-                        Text("Ban List Actualizada")
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: AppColors.beige,
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: AppColors.ocher, width: 2),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      Icon(
-                        Icons.layers,
-                        color: AppColors.petrolBlue,
-                      ),
-                      Text("Información de formatos")
-                    ],
-                  ),
-                ),
-              ),
-            ],
           ),
 
           const SizedBox(height: 40),
@@ -188,7 +91,7 @@ class HomeView extends StatelessWidget {
           const SizedBox(height: 50),
 
           // Call To Action
-          Container(
+          /* Container(
             width: double.infinity,
             padding: const EdgeInsets.all(30),
             decoration: BoxDecoration(
@@ -247,7 +150,7 @@ class HomeView extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 40), */
         ],
       ),
     );

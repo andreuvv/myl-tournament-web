@@ -64,6 +64,7 @@ flutter:
     - assets/json/banlist_pb_edition.json
     - assets/json/banlist_bf_libre.json
     - assets/json/banlist_bf_limited.json
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
