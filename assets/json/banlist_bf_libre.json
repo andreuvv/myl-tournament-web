@@ -5,69 +5,69 @@
     {
       "name": "Moñai",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/123/055.png"
     },
     {
       "name": "Humbaba",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/76/291.png"
     },
     {
       "name": "Traición de Efialtes",
       "type": "Talisman",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/142/020.png"
     },
     {
       "name": "Mag Mell",
       "type": "Totem",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/146/220.png"
     },
     {
       "name": "Ellen Trechend",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/146/223.png"
     },
     {
       "name": "Merodeador",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/146/036.png"
     },
     {
       "name": "Procesión",
       "type": "Talisman",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/146/030.png"
     },
     {
       "name": "Tír Na Nóg",
       "type": "Totem",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/146/015.png"
     },
     {
       "name": "Camahueto",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/123/012.png"
     }
   ],
   "limitedX1": [
     {
       "name": "Morgause",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/88/048.png"
     },
     {
       "name": "Tezcatlipoca",
-      "type": "Totem",
-      "imageUrl": ""
+      "type": "Aliado",
+      "imageUrl": "https://api.myl.cl/static/cards/123/007.png"
     },
     {
       "name": "Crear Dragón",
       "type": "Talisman",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/146/178.png"
     },
     {
       "name": "Cangrejo Cazador",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/146/037.png"
     },
     {
       "name": "Reanimar",
@@ -84,12 +84,12 @@
     {
       "name": "Sinach",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/146/018.png"
     },
     {
       "name": "An Torc Diabhalta",
-      "type": "Talisman",
-      "imageUrl": ""
+      "type": "Aliado",
+      "imageUrl": "https://api.myl.cl/static/cards/146/219.png"
     },
     {
       "name": "Surt",
