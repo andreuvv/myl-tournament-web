@@ -244,22 +244,22 @@
     {
       "name": "Herrero",
       "type": "Oro",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/92/015.png"
     },
     {
       "name": "Amergin el Druida",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/45/039.png"
     },
     {
       "name": "Bec de Corbin",
       "type": "Arma",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/92/007.png"
     },
     {
       "name": "Averix el Sabio",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/45/040.png"
     },
     {
       "name": "Goblin Stone",
@@ -269,12 +269,12 @@
     {
       "name": "Goblin",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/93/276.png"
     },
     {
       "name": "Duque Godofredo",
       "type": "Aliado",
-      "imageUrl": ""
+      "imageUrl": "https://api.myl.cl/static/cards/116/258.png"
     }
   ]
 }
