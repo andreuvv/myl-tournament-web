@@ -3,10 +3,18 @@ import 'package:myl_app_web/app_colors.dart';
 
 enum InfoSection {
   general,
-  rules,
-  prizes,
+  tournamentSystem,
+  prizesAndFunding,
+  participants,
   schedule,
-  location,
+}
+
+enum TournamentSubsection {
+  md1,
+  md3,
+  mulligan,
+  scoring,
+  timing,
 }
 
 extension InfoSectionExtension on InfoSection {
@@ -14,14 +22,14 @@ extension InfoSectionExtension on InfoSection {
     switch (this) {
       case InfoSection.general:
         return 'Información General';
-      case InfoSection.rules:
-        return 'Reglas del Torneo';
-      case InfoSection.prizes:
-        return 'Premios';
+      case InfoSection.tournamentSystem:
+        return 'Sistema de Torneo';
+      case InfoSection.prizesAndFunding:
+        return 'Premios y Financiamiento';
+      case InfoSection.participants:
+        return 'Participantes';
       case InfoSection.schedule:
         return 'Cronograma';
-      case InfoSection.location:
-        return 'Ubicación';
     }
   }
 
@@ -29,14 +37,40 @@ extension InfoSectionExtension on InfoSection {
     switch (this) {
       case InfoSection.general:
         return Icons.info_outline;
-      case InfoSection.rules:
+      case InfoSection.tournamentSystem:
         return Icons.gavel;
-      case InfoSection.prizes:
+      case InfoSection.prizesAndFunding:
         return Icons.emoji_events;
+      case InfoSection.participants:
+        return Icons.people;
       case InfoSection.schedule:
         return Icons.calendar_today;
-      case InfoSection.location:
-        return Icons.place;
+    }
+  }
+
+  List<TournamentSubsection>? get subsections {
+    switch (this) {
+      case InfoSection.tournamentSystem:
+        return TournamentSubsection.values;
+      default:
+        return null;
+    }
+  }
+}
+
+extension TournamentSubsectionExtension on TournamentSubsection {
+  String get title {
+    switch (this) {
+      case TournamentSubsection.md1:
+        return 'Torneo Md1';
+      case TournamentSubsection.md3:
+        return 'Torneo Md3';
+      case TournamentSubsection.mulligan:
+        return 'Mulligan';
+      case TournamentSubsection.scoring:
+        return 'Puntuación';
+      case TournamentSubsection.timing:
+        return 'Tiempos';
     }
   }
 }
@@ -50,19 +84,24 @@ class TournamentInfoPage extends StatefulWidget {
 
 class _TournamentInfoPageState extends State<TournamentInfoPage> {
   InfoSection _selectedSection = InfoSection.general;
+  TournamentSubsection? _selectedSubsection;
 
-  Widget _buildContent(InfoSection section) {
-    switch (section) {
+  Widget _buildContent() {
+    if (_selectedSubsection != null) {
+      return _buildSubsectionContent(_selectedSubsection!);
+    }
+
+    switch (_selectedSection) {
       case InfoSection.general:
         return _buildGeneralInfo();
-      case InfoSection.rules:
-        return _buildRules();
-      case InfoSection.prizes:
-        return _buildPrizes();
+      case InfoSection.tournamentSystem:
+        return _buildTournamentSystem();
+      case InfoSection.prizesAndFunding:
+        return _buildPrizesAndFunding();
+      case InfoSection.participants:
+        return _buildParticipants();
       case InfoSection.schedule:
         return _buildSchedule();
-      case InfoSection.location:
-        return _buildLocation();
     }
   }
 
@@ -75,19 +114,28 @@ class _TournamentInfoPageState extends State<TournamentInfoPage> {
     );
   }
 
-  Widget _buildRules() {
+  Widget _buildTournamentSystem() {
     return const Center(
       child: Text(
-        'Reglas del Torneo',
+        'Sistema de Torneo',
         style: TextStyle(color: AppColors.beige, fontSize: 24),
       ),
     );
   }
 
-  Widget _buildPrizes() {
+  Widget _buildPrizesAndFunding() {
     return const Center(
       child: Text(
-        'Premios',
+        'Premios y Financiamiento',
+        style: TextStyle(color: AppColors.beige, fontSize: 24),
+      ),
+    );
+  }
+
+  Widget _buildParticipants() {
+    return const Center(
+      child: Text(
+        'Participantes',
         style: TextStyle(color: AppColors.beige, fontSize: 24),
       ),
     );
@@ -102,59 +150,118 @@ class _TournamentInfoPageState extends State<TournamentInfoPage> {
     );
   }
 
-  Widget _buildLocation() {
-    return const Center(
+  Widget _buildSubsectionContent(TournamentSubsection subsection) {
+    return Center(
       child: Text(
-        'Ubicación',
-        style: TextStyle(color: AppColors.beige, fontSize: 24),
+        subsection.title,
+        style: const TextStyle(color: AppColors.beige, fontSize: 24),
       ),
     );
   }
 
   Widget _buildIndexItem(InfoSection section) {
-    final isSelected = _selectedSection == section;
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: GestureDetector(
-        onTap: () {
-          setState(() {
-            _selectedSection = section;
-          });
-        },
-        child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-          decoration: BoxDecoration(
-            color: isSelected ? AppColors.petrolBlue : Colors.transparent,
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(
-              color: isSelected ? AppColors.ocher : Colors.transparent,
-              width: 1,
+    final isSectionSelected = _selectedSection == section;
+    final subsections = section.subsections;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // Main section item
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () {
+              setState(() {
+                _selectedSection = section;
+                _selectedSubsection = null;
+              });
+            },
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+              decoration: BoxDecoration(
+                color: isSectionSelected && _selectedSubsection == null
+                    ? AppColors.petrolBlue
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: isSectionSelected && _selectedSubsection == null
+                      ? AppColors.ocher
+                      : Colors.transparent,
+                  width: 1,
+                ),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    section.icon,
+                    color: AppColors.beige,
+                    size: 20,
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      section.title,
+                      style: TextStyle(
+                        color: AppColors.beige,
+                        fontWeight:
+                            isSectionSelected && _selectedSubsection == null
+                                ? FontWeight.bold
+                                : FontWeight.normal,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          child: Row(
-            children: [
-              Icon(
-                section.icon,
-                color: AppColors.beige,
-                size: 20,
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Text(
-                  section.title,
-                  style: TextStyle(
-                    color: AppColors.beige,
-                    fontWeight:
-                        isSelected ? FontWeight.bold : FontWeight.normal,
-                    fontSize: 16,
+        ),
+        // Subsections (always shown if they exist)
+        if (subsections != null)
+          ...subsections.map((subsection) {
+            final isSubsectionSelected = _selectedSubsection == subsection;
+            return MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _selectedSubsection = subsection;
+                    _selectedSection = section;
+                  });
+                },
+                child: Container(
+                  margin: const EdgeInsets.only(
+                      left: 32, right: 8, top: 2, bottom: 2),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                  decoration: BoxDecoration(
+                    color: isSubsectionSelected
+                        ? AppColors.petrolBlue.withValues(alpha: 0.7)
+                        : Colors.transparent,
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(
+                      color: isSubsectionSelected
+                          ? AppColors.ocher
+                          : AppColors.beige.withValues(alpha: 0.2),
+                      width: 1,
+                    ),
+                  ),
+                  child: Text(
+                    subsection.title,
+                    style: TextStyle(
+                      color: AppColors.beige,
+                      fontWeight: isSubsectionSelected
+                          ? FontWeight.bold
+                          : FontWeight.normal,
+                      fontSize: 14,
+                    ),
                   ),
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
+            );
+          }).toList(),
+      ],
     );
   }
 
@@ -177,7 +284,7 @@ class _TournamentInfoPageState extends State<TournamentInfoPage> {
         Expanded(
           child: Container(
             color: AppColors.coalGrey,
-            child: _buildContent(_selectedSection),
+            child: _buildContent(),
           ),
         ),
       ],
@@ -185,6 +292,8 @@ class _TournamentInfoPageState extends State<TournamentInfoPage> {
   }
 
   Widget _buildMobileLayout() {
+    final currentTitle = _selectedSubsection?.title ?? _selectedSection.title;
+
     return Column(
       children: [
         // Fixed header with title and menu
@@ -195,33 +304,74 @@ class _TournamentInfoPageState extends State<TournamentInfoPage> {
           ),
           child: Row(
             children: [
-              PopupMenuButton<InfoSection>(
+              PopupMenuButton<dynamic>(
                 icon: const Icon(Icons.menu, color: AppColors.beige),
                 color: AppColors.coalGrey,
-                onSelected: (section) {
+                onSelected: (value) {
                   setState(() {
-                    _selectedSection = section;
+                    if (value is InfoSection) {
+                      _selectedSection = value;
+                      _selectedSubsection = null;
+                    } else if (value is TournamentSubsection) {
+                      _selectedSubsection = value;
+                      _selectedSection = InfoSection.tournamentSystem;
+                    }
                   });
                 },
-                itemBuilder: (context) => InfoSection.values.map((section) {
-                  return PopupMenuItem(
-                    value: section,
-                    child: Row(
-                      children: [
-                        Icon(section.icon, color: AppColors.beige, size: 18),
-                        const SizedBox(width: 12),
-                        Text(
-                          section.title,
-                          style: const TextStyle(color: AppColors.beige),
+                itemBuilder: (context) {
+                  List<PopupMenuEntry<dynamic>> items = [];
+                  for (var section in InfoSection.values) {
+                    // Add section item
+                    items.add(
+                      PopupMenuItem(
+                        value: section,
+                        child: Row(
+                          children: [
+                            Icon(section.icon,
+                                color: AppColors.beige, size: 18),
+                            const SizedBox(width: 12),
+                            Text(
+                              section.title,
+                              style: const TextStyle(
+                                color: AppColors.beige,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  );
-                }).toList(),
+                      ),
+                    );
+                    // Add subsection items if they exist
+                    if (section.subsections != null) {
+                      for (var subsection in section.subsections!) {
+                        items.add(
+                          PopupMenuItem(
+                            value: subsection,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 24),
+                              child: Text(
+                                subsection.title,
+                                style: TextStyle(
+                                  color: AppColors.beige.withValues(alpha: 0.9),
+                                  fontSize: 13,
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                    }
+                    // Add divider between sections (except after last)
+                    if (section != InfoSection.values.last) {
+                      items.add(const PopupMenuDivider());
+                    }
+                  }
+                  return items;
+                },
               ),
               Expanded(
                 child: Text(
-                  _selectedSection.title,
+                  currentTitle,
                   style: const TextStyle(
                     color: AppColors.beige,
                     fontSize: 18,
@@ -236,7 +386,7 @@ class _TournamentInfoPageState extends State<TournamentInfoPage> {
         Expanded(
           child: Container(
             color: AppColors.coalGrey,
-            child: _buildContent(_selectedSection),
+            child: _buildContent(),
           ),
         ),
       ],
