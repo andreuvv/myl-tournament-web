@@ -228,9 +228,6 @@ class _GameFormatsPageState extends State<GameFormatsPage> {
           width: MediaQuery.of(context).size.width / 4,
           decoration: const BoxDecoration(
             color: AppColors.coalGrey,
-            border: Border(
-              right: BorderSide(color: AppColors.ocher, width: 2),
-            ),
           ),
           child: ListView(
             padding: const EdgeInsets.symmetric(vertical: 20),
@@ -261,9 +258,6 @@ class _GameFormatsPageState extends State<GameFormatsPage> {
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           decoration: const BoxDecoration(
             color: AppColors.coalGrey,
-            border: Border(
-              bottom: BorderSide(color: AppColors.ocher, width: 2),
-            ),
           ),
           child: Row(
             children: [

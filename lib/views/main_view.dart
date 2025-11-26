@@ -174,7 +174,7 @@ class MainView extends StatelessWidget {
               ),
         toolbarHeight: 70,
       ),
-      body: SelectionArea(child: content),
+      body: content,
     );
   }
 }

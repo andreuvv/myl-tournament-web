@@ -51,17 +51,13 @@ class _TcgAppState extends State<TcgApp> {
           surface: AppColors.beige,
         ),
         fontFamily: 'Georgia',
-        appBarTheme: const AppBarTheme(
-          scrolledUnderElevation: 0,
+        appBarTheme: AppBarTheme(
+          scrolledUnderElevation: 4,
           backgroundColor: AppColors.coalGrey,
           foregroundColor: AppColors.beige,
           centerTitle: true,
-          shape: Border(
-            bottom: BorderSide(
-              color: AppColors.ocher,
-              width: 1,
-            ),
-          ),
+          elevation: 4,
+          shadowColor: Colors.black.withValues(alpha: 0.5),
         ),
       ),
       home: StreamBuilder<MenuOption>(
