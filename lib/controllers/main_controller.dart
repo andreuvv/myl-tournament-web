@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:myl_app_web/controllers/ban_list_controller.dart';
 import 'package:myl_app_web/static/mock_data.dart';
 import 'package:myl_app_web/views/ban_list_page.dart';
+import 'package:myl_app_web/views/game_formats_page.dart';
 import 'package:myl_app_web/views/home_view_page.dart';
+import 'package:myl_app_web/views/tournament_info_page.dart';
 import 'package:myl_app_web/widgets/placeholder_widget.dart';
 
 class MainController {
@@ -36,9 +38,9 @@ class MainController {
       case MenuOption.banList:
         return BanListPage(controller: banListController);
       case MenuOption.formats:
-        return const PlaceholderView(title: "Formatos de Juego");
+        return const GameFormatsPage();
       case MenuOption.info:
-        return const PlaceholderView(title: "Información del Torneo");
+        return const TournamentInfoPage();
       case MenuOption.deckBuilder:
         return const PlaceholderView(title: "Constructor de Mazos");
     }

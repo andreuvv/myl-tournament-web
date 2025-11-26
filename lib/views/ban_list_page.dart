@@ -125,52 +125,49 @@ class BanListPage extends StatelessWidget {
                   delegate: _StickyHeaderDelegate(
                     minHeight: 50,
                     maxHeight: 50,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 32),
-                      child: Container(
-                        color: AppColors.coalGrey,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: BanListCategory.values.map((category) {
-                            final isSelected = category == selectedCategory;
-                            return Expanded(
-                              child: Material(
-                                color: Colors.transparent,
-                                child: InkWell(
-                                  onTap: () =>
-                                      controller.selectCategory(category),
-                                  child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 12),
-                                    decoration: BoxDecoration(
-                                      border: Border(
-                                        bottom: BorderSide(
-                                          color: isSelected
-                                              ? AppColors.brickRed
-                                              : Colors.transparent,
-                                          width: 3,
-                                        ),
+                    child: Container(
+                      color: AppColors.coalGrey,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: BanListCategory.values.map((category) {
+                          final isSelected = category == selectedCategory;
+                          return Expanded(
+                            child: Material(
+                              color: Colors.transparent,
+                              child: InkWell(
+                                onTap: () =>
+                                    controller.selectCategory(category),
+                                child: Container(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 12),
+                                  decoration: BoxDecoration(
+                                    border: Border(
+                                      bottom: BorderSide(
+                                        color: isSelected
+                                            ? AppColors.brickRed
+                                            : Colors.transparent,
+                                        width: 3,
                                       ),
                                     ),
-                                    child: Text(
-                                      category.displayName,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: isSelected
-                                            ? AppColors.beige
-                                            : AppColors.white
-                                                .withValues(alpha: 0.6),
-                                        fontWeight: isSelected
-                                            ? FontWeight.bold
-                                            : FontWeight.normal,
-                                      ),
+                                  ),
+                                  child: Text(
+                                    category.displayName,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: isSelected
+                                          ? AppColors.beige
+                                          : AppColors.white
+                                              .withValues(alpha: 0.6),
+                                      fontWeight: isSelected
+                                          ? FontWeight.bold
+                                          : FontWeight.normal,
                                     ),
                                   ),
                                 ),
                               ),
-                            );
-                          }).toList(),
-                        ),
+                            ),
+                          );
+                        }).toList(),
                       ),
                     ),
                   ),
