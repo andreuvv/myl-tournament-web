@@ -65,37 +65,113 @@ class MainView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = MediaQuery.of(context).size.width < 800;
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Row(
-          children: [
-            // Left: Logo/Title with home navigation
-            MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: GestureDetector(
-                onTap: () => onMenuSelect(MenuOption.home),
-                child: Image.asset(
-                  'assets/images/logo_premier.png',
-                  height: 55,
-                  //fit: BoxFit.cover,
-                ),
+        title: isMobile
+            ? Row(
+                children: [
+                  // Logo on mobile
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () => onMenuSelect(MenuOption.home),
+                      child: Image.asset(
+                        'assets/images/logo_premier.png',
+                        height: 45,
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  // Hamburger menu for mobile
+                  PopupMenuButton<MenuOption>(
+                    icon: const Icon(Icons.menu, color: AppColors.beige),
+                    color: AppColors.coalGrey,
+                    onSelected: (option) => onMenuSelect(option),
+                    itemBuilder: (context) => [
+                      PopupMenuItem(
+                        value: MenuOption.info,
+                        child: Row(
+                          children: const [
+                            Icon(Icons.info, color: AppColors.beige, size: 18),
+                            SizedBox(width: 8),
+                            Text('Info Torneo',
+                                style: TextStyle(color: AppColors.beige)),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: MenuOption.banList,
+                        child: Row(
+                          children: const [
+                            Icon(Icons.block, color: AppColors.beige, size: 18),
+                            SizedBox(width: 8),
+                            Text('Ban List Actualizada',
+                                style: TextStyle(color: AppColors.beige)),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
+                        value: MenuOption.formats,
+                        child: Row(
+                          children: const [
+                            Icon(Icons.layers,
+                                color: AppColors.beige, size: 18),
+                            SizedBox(width: 8),
+                            Text('Formatos',
+                                style: TextStyle(color: AppColors.beige)),
+                          ],
+                        ),
+                      ),
+                      PopupMenuItem(
+                        enabled: false,
+                        child: Row(
+                          children: const [
+                            Icon(Icons.build_circle,
+                                color: Colors.grey, size: 18),
+                            SizedBox(width: 8),
+                            Text('Deck Builder',
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    decoration: TextDecoration.lineThrough)),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              )
+            : Row(
+                children: [
+                  // Left: Logo/Title with home navigation
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () => onMenuSelect(MenuOption.home),
+                      child: Image.asset(
+                        'assets/images/logo_premier.png',
+                        height: 55,
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  // Center: Main navigation
+                  _buildNavButton("Info Torneo", MenuOption.info,
+                      icon: Icons.info),
+                  const SizedBox(width: 8),
+                  _buildNavButton("Ban List Actualizada", MenuOption.banList,
+                      icon: Icons.block),
+                  const SizedBox(width: 8),
+                  _buildNavButton("Formatos", MenuOption.formats,
+                      icon: Icons.layers),
+                  const Spacer(),
+                  // Right: Deck Builder (disabled)
+                  _buildNavButton("Deck Builder", MenuOption.deckBuilder,
+                      disabled: true, icon: Icons.build_circle),
+                ],
               ),
-            ),
-            const Spacer(),
-            // Center: Main navigation
-            _buildNavButton("Info Torneo", MenuOption.info, icon: Icons.info),
-            const SizedBox(width: 8),
-            _buildNavButton("Ban List Actualizada", MenuOption.banList,
-                icon: Icons.block),
-            const SizedBox(width: 8),
-            _buildNavButton("Formatos", MenuOption.formats, icon: Icons.layers),
-            const Spacer(),
-            // Right: Deck Builder (disabled)
-            _buildNavButton("Deck Builder", MenuOption.deckBuilder,
-                disabled: true, icon: Icons.build_circle),
-          ],
-        ),
         toolbarHeight: 70,
       ),
       body: SelectionArea(child: content),
