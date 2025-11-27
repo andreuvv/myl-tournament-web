@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:myl_app_web/models/ban_list_data_model.dart';
+import 'package:myl_app_web/feature/banlist/model/ban_list_data_model.dart';
 
 enum BanListFormat {
   primerBloqueRacialLibre,

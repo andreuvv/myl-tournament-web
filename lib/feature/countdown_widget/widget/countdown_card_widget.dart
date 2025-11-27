@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myl_app_web/app_colors.dart';
-import 'package:myl_app_web/controllers/countdown_controller.dart';
+import 'package:myl_app_web/feature/countdown_widget/controller/countdown_controller.dart';
 
 class CountdownCard extends StatefulWidget {
   final DateTime targetDate;

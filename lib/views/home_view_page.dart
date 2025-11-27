@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myl_app_web/app_colors.dart';
 import 'package:myl_app_web/models/tournament_data_model.dart';
 import 'package:myl_app_web/static/mock_data.dart';
-import 'package:myl_app_web/widgets/countdown_card_widget.dart';
+import 'package:myl_app_web/feature/countdown_widget/widget/countdown_card_widget.dart';
 import 'package:myl_app_web/widgets/map_card_widget.dart';
 
 class HomeView extends StatelessWidget {

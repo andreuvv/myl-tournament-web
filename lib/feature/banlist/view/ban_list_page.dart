@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myl_app_web/app_colors.dart';
-import 'package:myl_app_web/controllers/ban_list_controller.dart';
+import 'package:myl_app_web/feature/banlist/controller/ban_list_controller.dart';
 
 class BanListPage extends StatelessWidget {
   final BanListController controller;
