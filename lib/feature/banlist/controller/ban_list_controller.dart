@@ -94,15 +94,12 @@ class BanListController {
     }
   }
 
-  void selectFormat(BanListFormat format) {
+  void selectFormatAndCategory(BanListFormat format, BanListCategory category) {
     _selectedFormat = format;
-    _formatController.add(_selectedFormat);
-    _loadData(format);
-  }
-
-  void selectCategory(BanListCategory category) {
     _selectedCategory = category;
+    _formatController.add(_selectedFormat);
     _categoryController.add(_selectedCategory);
+    _loadData(format);
   }
 
   void dispose() {
