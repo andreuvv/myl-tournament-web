@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'tournament_subsection.dart';
 
 enum InfoSection {
-  //general,
+  general,
   tournamentSystem,
   prizesAndFunding,
   participants,
@@ -12,8 +12,8 @@ enum InfoSection {
 extension InfoSectionExtension on InfoSection {
   String get title {
     switch (this) {
-      // case InfoSection.general:
-      //   return 'Información General';
+      case InfoSection.general:
+        return 'Información General';
       case InfoSection.tournamentSystem:
         return 'Sistema de Torneo';
       case InfoSection.prizesAndFunding:
@@ -27,8 +27,8 @@ extension InfoSectionExtension on InfoSection {
 
   IconData get icon {
     switch (this) {
-      // case InfoSection.general:
-      //   return Icons.info_outline;
+      case InfoSection.general:
+        return Icons.info_outline;
       case InfoSection.tournamentSystem:
         return Icons.gavel;
       case InfoSection.prizesAndFunding:

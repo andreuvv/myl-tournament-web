@@ -8,7 +8,7 @@ class InfoIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tooltip(
       message:
-          'Para todos los formatos:\n- Las cartas sin raza\n- Las cartas con "SP" en su nombre.\n- Las cartas con ★ no se pueden incluir en el mazo.\n\nLas imagenes usadas son referenciales y pueden o no corresponder a la última versión impresa de la carta.\n\nLas siguientes restricciones aplican a cualquier versión de la carta.',
+          'Para todos los formatos, no se pueden incluir en el mazo:\n- Las cartas de Aliado sin raza\n- Las cartas con "SP" en su nombre.\n- Las cartas con ★ en su nombre.\n\nLas imagenes usadas son referenciales y pueden o no corresponder a la última versión impresa de la carta.\n\nLas siguientes restricciones aplican a cualquier versión de la carta.',
       preferBelow: true,
       padding: const EdgeInsets.all(16),
       margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -44,7 +44,7 @@ class InfoIconWidget extends StatelessWidget {
                 ],
               ),
               content: const Text(
-                'Para todos los formatos:\n- Las cartas sin raza\n- Las cartas con "SP" en su nombre.\n- Las cartas con ★ no se pueden incluir en el mazo.\n\nLas imagenes usadas son referenciales y pueden o no corresponder a la última versión impresa de la carta.\n\nLas siguientes restricciones aplican a cualquier versión de la carta.',
+                'Para todos los formatos, no se pueden incluir en el mazo:\n- Las cartas de Aliado sin raza\n- Las cartas con "SP" en su nombre.\n- Las cartas con ★ en su nombre.\n\nLas imagenes usadas son referenciales y pueden o no corresponder a la última versión impresa de la carta.\n\nLas siguientes restricciones aplican a cualquier versión de la carta.',
                 style: TextStyle(
                   color: AppColors.beige,
                   fontSize: 14,

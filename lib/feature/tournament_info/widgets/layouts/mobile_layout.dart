@@ -28,8 +28,8 @@ class MobileLayout extends StatelessWidget {
     }
 
     switch (selectedSection) {
-      // case InfoSection.general:
-      //   return const GeneralInfoContent();
+      case InfoSection.general:
+        return const GeneralInfoContent();
       case InfoSection.tournamentSystem:
         return const TournamentSystemContent();
       case InfoSection.prizesAndFunding:
