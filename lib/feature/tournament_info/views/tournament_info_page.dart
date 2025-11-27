@@ -23,7 +23,8 @@ class TournamentInfoPage extends StatelessWidget {
           stream: controller.selectedSubsectionStream,
           initialData: controller.selectedSubsection,
           builder: (context, subsectionSnapshot) {
-            final selectedSection = sectionSnapshot.data ?? InfoSection.general;
+            final selectedSection =
+                sectionSnapshot.data ?? InfoSection.tournamentSystem;
             final selectedSubsection = subsectionSnapshot.data;
 
             return isMobile

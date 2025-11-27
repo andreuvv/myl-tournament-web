@@ -36,21 +36,17 @@ class IndexItemWidget extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               decoration: BoxDecoration(
                 color: isSectionSelected && selectedSubsection == null
-                    ? AppColors.petrolBlue
+                    ? AppColors.sageGreen
                     : Colors.transparent,
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: isSectionSelected && selectedSubsection == null
-                      ? AppColors.ocher
-                      : Colors.transparent,
-                  width: 1,
-                ),
               ),
               child: Row(
                 children: [
                   Icon(
                     section.icon,
-                    color: AppColors.beige,
+                    color: isSectionSelected && selectedSubsection == null
+                        ? AppColors.coalGrey
+                        : AppColors.beige,
                     size: 20,
                   ),
                   const SizedBox(width: 12),
@@ -58,7 +54,9 @@ class IndexItemWidget extends StatelessWidget {
                     child: Text(
                       section.title,
                       style: TextStyle(
-                        color: AppColors.beige,
+                        color: isSectionSelected && selectedSubsection == null
+                            ? AppColors.coalGrey
+                            : AppColors.beige,
                         fontWeight:
                             isSectionSelected && selectedSubsection == null
                                 ? FontWeight.bold
@@ -87,20 +85,16 @@ class IndexItemWidget extends StatelessWidget {
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
                   decoration: BoxDecoration(
                     color: isSubsectionSelected
-                        ? AppColors.petrolBlue.withValues(alpha: 0.7)
-                        : Colors.transparent,
+                        ? AppColors.sageGreen
+                        : AppColors.coalGrey,
                     borderRadius: BorderRadius.circular(6),
-                    border: Border.all(
-                      color: isSubsectionSelected
-                          ? AppColors.ocher
-                          : AppColors.beige.withValues(alpha: 0.2),
-                      width: 1,
-                    ),
                   ),
                   child: Text(
                     subsection.title,
                     style: TextStyle(
-                      color: AppColors.beige,
+                      color: isSubsectionSelected
+                          ? AppColors.coalGrey
+                          : AppColors.beige,
                       fontWeight: isSubsectionSelected
                           ? FontWeight.bold
                           : FontWeight.normal,

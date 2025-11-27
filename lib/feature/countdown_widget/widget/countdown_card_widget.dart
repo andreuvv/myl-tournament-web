@@ -70,33 +70,16 @@ class _CountdownCardState extends State<CountdownCard> {
                 thickness: 1,
               ),
               const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _TimeBox(value: timeLeft.inDays, label: "Días     "),
-                  const SizedBox(width: 12),
-                  _TimeBox(value: timeLeft.inHours % 24, label: "Horas     "),
-                  const SizedBox(width: 12),
-                  _TimeBox(value: timeLeft.inMinutes % 60, label: "Min     "),
-                  const SizedBox(width: 12),
-                  _TimeBox(
-                    value: timeLeft.inSeconds % 60,
-                    label: "Seg",
-                    isAccent: true,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: AppColors.white,
+                  color: AppColors.white.withAlpha(125),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(
                   children: const [
                     Text(
-                      "Fecha de Inicio",
+                      "Fecha del evento",
                       style: TextStyle(
                           fontSize: 12,
                           color: AppColors.coalGrey,
@@ -112,6 +95,23 @@ class _CountdownCardState extends State<CountdownCard> {
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _TimeBox(value: timeLeft.inDays, label: "Días     "),
+                  const SizedBox(width: 12),
+                  _TimeBox(value: timeLeft.inHours % 24, label: "Horas     "),
+                  const SizedBox(width: 12),
+                  _TimeBox(value: timeLeft.inMinutes % 60, label: "Min     "),
+                  const SizedBox(width: 12),
+                  _TimeBox(
+                    value: timeLeft.inSeconds % 60,
+                    label: "Seg",
+                    isAccent: true,
+                  ),
+                ],
               ),
             ],
           ),

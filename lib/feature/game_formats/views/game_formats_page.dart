@@ -138,15 +138,9 @@ class _GameFormatsPageState extends State<GameFormatsPage> {
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               decoration: BoxDecoration(
                 color: isBlockSelected && _selectedVariant == null
-                    ? AppColors.petrolBlue
+                    ? AppColors.sageGreen
                     : Colors.transparent,
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: isBlockSelected && _selectedVariant == null
-                      ? AppColors.ocher
-                      : Colors.transparent,
-                  width: 1,
-                ),
               ),
               child: Row(
                 children: [
@@ -192,15 +186,9 @@ class _GameFormatsPageState extends State<GameFormatsPage> {
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
                 decoration: BoxDecoration(
                   color: isVariantSelected
-                      ? AppColors.petrolBlue.withValues(alpha: 0.7)
+                      ? AppColors.sageGreen
                       : Colors.transparent,
                   borderRadius: BorderRadius.circular(6),
-                  border: Border.all(
-                    color: isVariantSelected
-                        ? AppColors.ocher
-                        : AppColors.beige.withValues(alpha: 0.2),
-                    width: 1,
-                  ),
                 ),
                 child: Text(
                   variant.title,

@@ -12,7 +12,7 @@ class TournamentInfoController {
   Stream<TournamentSubsection?> get selectedSubsectionStream =>
       _selectedSubsectionController.stream;
 
-  InfoSection _selectedSection = InfoSection.general;
+  InfoSection _selectedSection = InfoSection.tournamentSystem;
   TournamentSubsection? _selectedSubsection;
 
   InfoSection get selectedSection => _selectedSection;
