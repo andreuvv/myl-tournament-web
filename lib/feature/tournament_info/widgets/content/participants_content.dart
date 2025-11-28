@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:myl_app_web/app_colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../models/info_section.dart';
 import '../../services/markdown_content_service.dart';
 
@@ -32,6 +33,11 @@ class ParticipantsContent extends StatelessWidget {
         return Markdown(
           data: snapshot.data!,
           selectable: true,
+          onTapLink: (text, href, title) {
+            if (href != null) {
+              launchUrl(Uri.parse(href));
+            }
+          },
           styleSheet: MarkdownStyleSheet(
             p: const TextStyle(color: AppColors.beige, fontSize: 16),
             h1: const TextStyle(
