@@ -38,6 +38,7 @@ class SubsectionContent extends StatelessWidget {
 
         return Markdown(
           data: snapshot.data!,
+          selectable: true,
           styleSheet: MarkdownStyleSheet(
             p: const TextStyle(color: AppColors.beige, fontSize: 16),
             h1: const TextStyle(
