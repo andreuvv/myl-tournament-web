@@ -8,6 +8,7 @@
     - Cada ronda tendrá una duración máxima de 45 minutos, dentro de los que se deben jugar todas las partidas.
     - Llegar con 10 minutos de retraso contará como partida perdida para el jugador faltante, otorgando 3 puntos al ganador.
     - En caso de agotarse el tiempo y los jugadores no han terminado sus partidas, se darán los últimos 5 minutos para terminar dicha partida.
+    - Si al terminar los últimos 5 minutos no se ha terminado la partida en curso, quedará esta anulada y se dará la ronda terminada con los resultados del momento (ej: se esta jugando la 3era partida, se termina el tiempo, el marcador final quedaría 1-1 en un empate.)
     - El emparejamiento de estas rondas será hecho al azar mediante IA, con tal que cada participante juegue una partida contra cada uno de los otros participantes y juegue la misma cantidad de duelos en ambos formatos.
     - El emparejamiento será posteado el mismo día del torneo e incluido en esta misma web y en el grupo de whatsapp.
 - **🏆 Top 2 avanza a la final:**
@@ -19,11 +20,11 @@
 ### 🎮 Elección de formato:
 
 - **⚔️ Fase de Rondas:**
-    - Los formatos (***Primer Bloque*** y ***Furia Extendido***) a jugar durante esta ronda será determinado al azar en conjunto con el emparejamiento. Con tal que cada jugador jugará una vez contra cada jugador y jugará la misma cantidad de duelos en un formato y en el otro.
+    - Los formatos (***Primer Bloque*** y ***Bloque Furia***) a jugar durante esta ronda será determinado al azar en conjunto con el emparejamiento. Con tal que cada jugador jugará una vez contra cada jugador y jugará la misma cantidad de duelos en un formato y en el otro.
 - **👑 Final:** Mejor de 3 partidas.
     - Para el primer duelo del Md3, el formato se determinará lanzando una moneda. donde:
         - **🪙 Cara** (Logo Dragón): **Primer Bloque**.
-        - **🪙 Sello** (Letras "Mitos y leyendas"): **Furia Extendido**
+        - **🪙 Sello** (Letras "Mitos y leyendas"): **Bloque Furia**
     - 🎯 El formato en el segundo duelo será elegido por el perdedor del primer duelo del Md3.
     - 🎲 Para el tercer duelo, el formato será elegido al azar nuevamente.
 

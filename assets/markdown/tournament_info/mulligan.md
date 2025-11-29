@@ -3,15 +3,15 @@
 
 ## 🆓 Para formatos Libres
 
-_**Primer Bloque Racial Libre**_ y _**Furia Extendido Racial Libre**_:
+_**Primer Bloque Racial Libre**_ y _**Bloque Furia Racial Libre**_:
 
 - 🎴 Ambos jugadores robarán una mano de **8 cartas**.
 - 🔀 Si un jugador no está satisfecho con su mano puede cambiarla, robando una carta menos, siguiendo el siguiente patrón de cartas en mano por cada _mulligan:_
-    - **8️⃣ (primera mano) - 7️⃣ - 7️⃣ - 6️⃣ - 6️⃣ - 5️⃣ - 5️⃣ - 4️⃣ - 4️⃣ - 3️⃣ - 3️⃣ - 2️⃣ - 2️⃣ - 1️⃣ carta(s).**
+    - **8️ (primera mano) - 7️ - 7️ - 6️ - 6️ - 5️ - 5️ - 4️ - 4️ - 3️ - 3️ - 2️ - 2️ - 1️ carta(s).**
 
 ## 🎯 Para formatos Limitados
 
-_**Primer Bloque Racial Edición**_ y _**Furia Extendido Racial Limitado**_:
+_**Primer Bloque Racial Edición**_ y _**Bloque Furia Racial Limitado**_:
 
 - 📜 Se jugará con el _mulligan_ **estándar de MyL**.
 - 🎴 Ambos jugadores robarán una mano de **8 cartas**.

@@ -19,11 +19,11 @@
 ### 🎮 Elección de formato:
 
 - **⚔️ Fase de Rondas:** Mejor de 1 partida.
-    - Los formatos (***Primer Bloque*** y ***Furia Extendido***) a jugar durante esta ronda será determinado al azar en conjunto con el emparejamiento. Con tal que cada jugador jugará una vez contra cada jugador y jugará la misma cantidad de duelos en un formato y en el otro.
+    - Los formatos (***Primer Bloque*** y ***Bloque Furia***) a jugar durante esta ronda será determinado al azar en conjunto con el emparejamiento. Con tal que cada jugador jugará una vez contra cada jugador y jugará la misma cantidad de duelos en un formato y en el otro.
 - **👑 Final:** Mejor de 3 partidas.
     - Para el primer duelo del Md3, el formato se determinará lanzando una moneda. donde:
         - **🪙 Cara** (Logo Dragón): **Primer Bloque**.
-        - **🪙 Sello** (Letras "Mitos y leyendas"): **Furia Extendido**
+        - **🪙 Sello** (Letras "Mitos y leyendas"): **Bloque Furia**
     - 🎯 El formato en el segundo duelo será elegido por el perdedor del primer duelo del Md3.
     - 🎲 Para el tercer duelo, el formato será elegido al azar nuevamente.
 

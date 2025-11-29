@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "mulligan.md",
+                "file": "timing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mulligan"
+              "title": "timing"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "mulligan.md",
+                "file": "timing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for mulligan"
+              "title": "Backlinks for timing"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "mulligan.md",
+                "file": "timing.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from mulligan"
+              "title": "Outgoing links from timing"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "mulligan.md",
+                "file": "timing.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of mulligan"
+              "title": "Outline of timing"
             }
           }
         ]
@@ -170,6 +170,8 @@
   },
   "active": "48ff86eb58d13fd7",
   "lastOpenFiles": [
+    "scoring.md",
+    "mulligan.md",
     "md1.md",
     "general.md",
     "assets/images/logo_premier.png"
