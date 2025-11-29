@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "md1.md",
+                "file": "mulligan.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "md1"
+              "title": "mulligan"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "md1.md",
+                "file": "mulligan.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for md1"
+              "title": "Backlinks for mulligan"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "md1.md",
+                "file": "mulligan.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from md1"
+              "title": "Outgoing links from mulligan"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "md1.md",
+                "file": "mulligan.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of md1"
+              "title": "Outline of mulligan"
             }
           }
         ]
@@ -170,6 +170,7 @@
   },
   "active": "48ff86eb58d13fd7",
   "lastOpenFiles": [
+    "md1.md",
     "general.md",
     "assets/images/logo_premier.png"
   ]
