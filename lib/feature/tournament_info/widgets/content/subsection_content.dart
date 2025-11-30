@@ -81,6 +81,15 @@ class SubsectionContent extends StatelessWidget {
               color: AppColors.ocher,
               backgroundColor: AppColors.coalGrey,
             ),
+            tableHead: const TextStyle(
+              color: AppColors.beige,
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+            tableBody: const TextStyle(
+              color: AppColors.beige,
+              fontSize: 16,
+            ),
           ),
         );
       },

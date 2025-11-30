@@ -25,6 +25,8 @@
     |Número de cuenta|0222946443|
     |Correo|[VEANVE@GMAIL.COM](mailto:VEANVE@GMAIL.COM)|
 
+---
+
 **📋 Datos para copiar:**
 ```
 ANDRE VERA VEAS
