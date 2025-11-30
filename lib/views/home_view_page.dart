@@ -134,9 +134,6 @@ class HomeView extends StatelessWidget {
                         color: AppColors.petrolBlue,
                         onTap: () {
                           // TODO: Navigate to fixture section
-                          if (onNavigate != null) {
-                            onNavigate!(MenuOption.info);
-                          }
                         },
                       ),
                     ),
@@ -149,9 +146,6 @@ class HomeView extends StatelessWidget {
                         color: AppColors.ocher,
                         onTap: () {
                           // TODO: Navigate to standings section
-                          if (onNavigate != null) {
-                            onNavigate!(MenuOption.info);
-                          }
                         },
                       ),
                     ),
@@ -167,9 +161,6 @@ class HomeView extends StatelessWidget {
                       color: AppColors.petrolBlue,
                       onTap: () {
                         // TODO: Navigate to fixture section
-                        if (onNavigate != null) {
-                          onNavigate!(MenuOption.info);
-                        }
                       },
                     ),
                     const SizedBox(height: 20),
@@ -180,9 +171,6 @@ class HomeView extends StatelessWidget {
                       color: AppColors.ocher,
                       onTap: () {
                         // TODO: Navigate to standings section
-                        if (onNavigate != null) {
-                          onNavigate!(MenuOption.info);
-                        }
                       },
                     ),
                   ],
@@ -218,68 +206,6 @@ class HomeView extends StatelessWidget {
           ),
 
           const SizedBox(height: 50),
-
-          // Call To Action
-          /* Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [AppColors.coalGrey, AppColors.coalGrey],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: AppColors.ocher, width: 2),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.2),
-                  blurRadius: 10,
-                  offset: const Offset(0, 5),
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                const Text(
-                  "¿Tu estrategia está lista?",
-                  style: TextStyle(
-                    color: AppColors.ocher,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  "No entres a la arena sin preparación.",
-                  style: TextStyle(color: Colors.white70, fontSize: 16),
-                ),
-                const SizedBox(height: 20),
-                ElevatedButton.icon(
-                  onPressed: () {
-                    if (onNavigate != null) {
-                      onNavigate!(MenuOption.deckBuilder);
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.brickRed,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 15,
-                    ),
-                    textStyle: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  icon: const Icon(Icons.build),
-                  label: const Text("IR AL DECK BUILDER"),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 40), */
         ],
       ),
     );

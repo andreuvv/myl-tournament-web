@@ -70,7 +70,16 @@ class BloqueFuriaContent extends StatelessWidget {
               color: AppColors.beige,
               fontStyle: FontStyle.italic,
             ),
-            blockquote: const TextStyle(color: AppColors.beige),
+            blockquote: const TextStyle(
+              color: AppColors.coalGrey,
+              fontWeight: FontWeight.w500,
+            ),
+            blockquotePadding: const EdgeInsets.all(12),
+            blockquoteDecoration: BoxDecoration(
+              color: AppColors.coalGrey,
+              borderRadius: BorderRadius.circular(4),
+              border: Border.all(color: AppColors.ocher, width: 2),
+            ),
             code: const TextStyle(
               color: AppColors.ocher,
               backgroundColor: AppColors.coalGrey,
