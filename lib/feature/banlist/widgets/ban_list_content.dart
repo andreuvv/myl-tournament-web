@@ -64,70 +64,73 @@ class BanListContent extends StatelessWidget {
               delegate: SliverChildBuilderDelegate(
                 (context, index) {
                   final card = cards[index];
-                  return Container(
-                    decoration: BoxDecoration(
-                      color: AppColors.beige,
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: AppColors.brickRed,
-                        width: 1,
+                  return Semantics(
+                    label: card.name,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.beige,
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                          color: AppColors.brickRed,
+                          width: 1,
+                        ),
                       ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            card.name,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                              color: AppColors.coalGrey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: SelectableText(
+                              card.name,
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: AppColors.coalGrey,
+                              ),
                             ),
                           ),
-                        ),
-                        Expanded(
-                          child: card.imageUrl.isNotEmpty
-                              ? Padding(
-                                  padding: const EdgeInsets.all(4.0),
-                                  child: ClipRRect(
-                                    borderRadius: const BorderRadius.vertical(
-                                        bottom: Radius.circular(8)),
-                                    child: Image.network(
-                                      card.imageUrl,
-                                      fit: BoxFit.contain,
-                                      errorBuilder:
-                                          (context, error, stackTrace) {
-                                        return Container(
-                                          color: AppColors.coalGrey
-                                              .withValues(alpha: 0.1),
-                                          child: const Center(
-                                            child: Icon(
-                                              Icons.broken_image,
-                                              color: AppColors.coalGrey,
-                                              size: 48,
+                          Expanded(
+                            child: card.imageUrl.isNotEmpty
+                                ? Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: ClipRRect(
+                                      borderRadius: const BorderRadius.vertical(
+                                          bottom: Radius.circular(8)),
+                                      child: Image.network(
+                                        card.imageUrl,
+                                        fit: BoxFit.contain,
+                                        errorBuilder:
+                                            (context, error, stackTrace) {
+                                          return Container(
+                                            color: AppColors.coalGrey
+                                                .withValues(alpha: 0.1),
+                                            child: const Center(
+                                              child: Icon(
+                                                Icons.broken_image,
+                                                color: AppColors.coalGrey,
+                                                size: 48,
+                                              ),
                                             ),
-                                          ),
-                                        );
-                                      },
+                                          );
+                                        },
+                                      ),
+                                    ),
+                                  )
+                                : Container(
+                                    color: AppColors.coalGrey
+                                        .withValues(alpha: 0.1),
+                                    child: const Center(
+                                      child: Icon(
+                                        Icons.image_not_supported,
+                                        color: AppColors.coalGrey,
+                                        size: 48,
+                                      ),
                                     ),
                                   ),
-                                )
-                              : Container(
-                                  color:
-                                      AppColors.coalGrey.withValues(alpha: 0.1),
-                                  child: const Center(
-                                    child: Icon(
-                                      Icons.image_not_supported,
-                                      color: AppColors.coalGrey,
-                                      size: 48,
-                                    ),
-                                  ),
-                                ),
-                        ),
-                      ],
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },

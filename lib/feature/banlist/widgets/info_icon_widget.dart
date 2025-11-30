@@ -66,12 +66,12 @@ class InfoIconWidget extends StatelessWidget {
           cursor: SystemMouseCursors.click,
           child: Container(
             decoration: BoxDecoration(
-              color: AppColors.petrolBlue.withAlpha(100),
+              color: AppColors.ocher.withAlpha(50),
               shape: BoxShape.circle,
             ),
-            child: const Icon(
+            child: Icon(
               Icons.info_outline,
-              color: AppColors.ocher,
+              color: AppColors.petrolBlue,
               size: 24,
             ),
           ),

@@ -36,7 +36,7 @@ class BanListMobileLayout extends StatelessWidget {
           child: Row(
             children: [
               PopupMenuButton<Map<String, dynamic>>(
-                icon: const Icon(Icons.menu, color: AppColors.beige),
+                icon: const Icon(Icons.menu, color: AppColors.petrolBlue),
                 color: AppColors.coalGrey,
                 onSelected: (value) {
                   controller.selectFormatAndCategory(
@@ -89,28 +89,33 @@ class BanListMobileLayout extends StatelessWidget {
               Expanded(
                 child: Row(
                   children: [
-                    Flexible(
-                      child: Text(
-                        currentTitle,
-                        style: const TextStyle(
-                          color: AppColors.beige,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        overflow: TextOverflow.ellipsis,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            currentTitle,
+                            style: const TextStyle(
+                              color: AppColors.beige,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            controller.lastUpdateDate,
+                            style: TextStyle(
+                              color: AppColors.beige.withOpacity(0.7),
+                              fontSize: 12,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(width: 8),
+                    const SizedBox(width: 12),
                     const InfoIconWidget(),
-                    const SizedBox(width: 8),
-                    Text(
-                      controller.lastUpdateDate,
-                      style: TextStyle(
-                        color: AppColors.beige.withOpacity(0.7),
-                        fontSize: 12,
-                        fontStyle: FontStyle.italic,
-                      ),
-                    ),
                   ],
                 ),
               ),

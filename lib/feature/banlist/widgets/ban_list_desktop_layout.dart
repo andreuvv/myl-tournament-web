@@ -53,27 +53,33 @@ class BanListDesktopLayout extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: Row(
                     children: [
-                      Flexible(
-                        child: Text(
-                          '${selectedFormat.displayName} - ${selectedCategory.displayName}',
-                          style: const TextStyle(
-                            color: AppColors.beige,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              '${selectedFormat.displayName} - ${selectedCategory.displayName}',
+                              style: const TextStyle(
+                                color: AppColors.beige,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              controller.lastUpdateDate,
+                              style: TextStyle(
+                                color: AppColors.beige.withOpacity(0.7),
+                                fontSize: 14,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(width: 12),
                       const InfoIconWidget(),
-                      const SizedBox(width: 12),
-                      Text(
-                        controller.lastUpdateDate,
-                        style: TextStyle(
-                          color: AppColors.beige.withOpacity(0.7),
-                          fontSize: 14,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
                     ],
                   ),
                 ),
