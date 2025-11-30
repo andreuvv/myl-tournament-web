@@ -38,7 +38,7 @@ class MainController {
       case MenuOption.banList:
         return BanListPage(controller: banListController);
       case MenuOption.formats:
-        return const GameFormatsPage();
+        return GameFormatsPage();
       case MenuOption.info:
         return TournamentInfoPage();
       case MenuOption.deckBuilder:

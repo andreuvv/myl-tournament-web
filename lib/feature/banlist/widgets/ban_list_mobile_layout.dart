@@ -47,14 +47,17 @@ class BanListMobileLayout extends StatelessWidget {
                 itemBuilder: (context) {
                   List<PopupMenuEntry<Map<String, dynamic>>> items = [];
                   for (var format in BanListFormat.values) {
+                    final isFormatSelected = selectedFormat == format;
                     // Add format item (non-clickable header)
                     items.add(
                       PopupMenuItem(
                         enabled: false,
                         child: Text(
                           format.displayName,
-                          style: const TextStyle(
-                            color: AppColors.beige,
+                          style: TextStyle(
+                            color: isFormatSelected
+                                ? AppColors.sageGreen
+                                : AppColors.beige,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -62,16 +65,32 @@ class BanListMobileLayout extends StatelessWidget {
                     );
                     // Add category items
                     for (var category in BanListCategory.values) {
+                      final isCategorySelected = selectedCategory == category &&
+                          selectedFormat == format;
                       items.add(
                         PopupMenuItem(
                           value: {'format': format, 'category': category},
-                          child: Padding(
+                          child: Container(
                             padding: const EdgeInsets.only(left: 24),
-                            child: Text(
-                              category.displayName,
-                              style: TextStyle(
-                                color: AppColors.beige.withValues(alpha: 0.9),
-                                fontSize: 13,
+                            decoration: BoxDecoration(
+                              color: isCategorySelected
+                                  ? AppColors.sageGreen.withValues(alpha: 0.3)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 4),
+                              child: Text(
+                                category.displayName,
+                                style: TextStyle(
+                                  color: isCategorySelected
+                                      ? AppColors.sageGreen
+                                      : AppColors.beige.withValues(alpha: 0.9),
+                                  fontSize: 13,
+                                  fontWeight: isCategorySelected
+                                      ? FontWeight.bold
+                                      : FontWeight.normal,
+                                ),
                               ),
                             ),
                           ),

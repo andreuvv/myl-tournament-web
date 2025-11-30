@@ -63,6 +63,21 @@ class MainView extends StatelessWidget {
     );
   }
 
+  String _getMenuTitle(MenuOption option) {
+    switch (option) {
+      case MenuOption.home:
+        return 'Inicio';
+      case MenuOption.info:
+        return 'Info Torneo';
+      case MenuOption.banList:
+        return 'Ban List';
+      case MenuOption.formats:
+        return 'Formatos';
+      case MenuOption.deckBuilder:
+        return 'Deck Builder';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isMobile = MediaQuery.of(context).size.width < 800;
@@ -84,13 +99,35 @@ class MainView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Spacer(),
+                  const SizedBox(width: 12),
+                  // Current section title
+                  Expanded(
+                    child: Text(
+                      _getMenuTitle(selectedOption),
+                      style: const TextStyle(
+                        color: AppColors.beige,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                   // Hamburger menu for mobile
                   PopupMenuButton<MenuOption>(
                     icon: const Icon(Icons.menu, color: AppColors.beige),
                     color: AppColors.coalGrey,
                     onSelected: (option) => onMenuSelect(option),
                     itemBuilder: (context) => [
+                      PopupMenuItem(
+                        value: MenuOption.home,
+                        child: Row(
+                          children: const [
+                            Icon(Icons.home, color: AppColors.beige, size: 18),
+                            SizedBox(width: 8),
+                            Text('Inicio',
+                                style: TextStyle(color: AppColors.beige)),
+                          ],
+                        ),
+                      ),
                       PopupMenuItem(
                         value: MenuOption.info,
                         child: Row(
@@ -108,7 +145,7 @@ class MainView extends StatelessWidget {
                           children: const [
                             Icon(Icons.block, color: AppColors.beige, size: 18),
                             SizedBox(width: 8),
-                            Text('Ban List Nov 2025',
+                            Text('Ban List',
                                 style: TextStyle(color: AppColors.beige)),
                           ],
                         ),
@@ -161,7 +198,7 @@ class MainView extends StatelessWidget {
                   _buildNavButton("Info Torneo", MenuOption.info,
                       icon: Icons.info),
                   const SizedBox(width: 8),
-                  _buildNavButton("Ban List Nov 2025", MenuOption.banList,
+                  _buildNavButton("Ban List", MenuOption.banList,
                       icon: Icons.block),
                   const SizedBox(width: 8),
                   _buildNavButton("Formatos", MenuOption.formats,

@@ -15,6 +15,81 @@ class HomeView extends StatelessWidget {
     this.onNavigate,
   });
 
+  Widget _buildQuickAccessCard({
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: AppColors.coalGrey,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: color, width: 2),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2),
+                blurRadius: 8,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  icon,
+                  size: 40,
+                  color: color,
+                ),
+              ),
+              const SizedBox(width: 20),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: color,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      subtitle,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: AppColors.beige,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(
+                Icons.arrow_forward_ios,
+                color: color,
+                size: 20,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -22,25 +97,6 @@ class HomeView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          //const SizedBox(height: 20),
-
-          /* Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            decoration: BoxDecoration(
-              border: Border.all(color: AppColors.petrolBlue),
-              borderRadius: BorderRadius.circular(20),
-              color: AppColors.sageGreen,
-            ),
-            child: const Text(
-              "PRÓXIMO TORNEO OFICIAL",
-              style: TextStyle(
-                color: AppColors.coalGrey,
-                fontWeight: FontWeight.w900,
-                letterSpacing: 1.2,
-              ),
-            ),
-          ), */
-          //const SizedBox(height: 20),
           Text(
             tournament.title,
             textAlign: TextAlign.center,
@@ -60,6 +116,79 @@ class HomeView extends StatelessWidget {
               color: AppColors.beige,
               fontStyle: FontStyle.italic,
             ),
+          ),
+
+          const SizedBox(height: 40),
+
+          // Quick access cards
+          LayoutBuilder(
+            builder: (context, constraints) {
+              if (constraints.maxWidth > 800) {
+                return Row(
+                  children: [
+                    Expanded(
+                      child: _buildQuickAccessCard(
+                        title: 'Fixture del Torneo',
+                        subtitle: 'Ver emparejamientos y rondas',
+                        icon: Icons.calendar_month,
+                        color: AppColors.petrolBlue,
+                        onTap: () {
+                          // TODO: Navigate to fixture section
+                          if (onNavigate != null) {
+                            onNavigate!(MenuOption.info);
+                          }
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    Expanded(
+                      child: _buildQuickAccessCard(
+                        title: 'Tabla de Posiciones',
+                        subtitle: 'Ver clasificación actual',
+                        icon: Icons.emoji_events,
+                        color: AppColors.ocher,
+                        onTap: () {
+                          // TODO: Navigate to standings section
+                          if (onNavigate != null) {
+                            onNavigate!(MenuOption.info);
+                          }
+                        },
+                      ),
+                    ),
+                  ],
+                );
+              } else {
+                return Column(
+                  children: [
+                    _buildQuickAccessCard(
+                      title: 'Fixture del Torneo',
+                      subtitle: 'Ver emparejamientos y rondas',
+                      icon: Icons.calendar_month,
+                      color: AppColors.petrolBlue,
+                      onTap: () {
+                        // TODO: Navigate to fixture section
+                        if (onNavigate != null) {
+                          onNavigate!(MenuOption.info);
+                        }
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    _buildQuickAccessCard(
+                      title: 'Tabla de Posiciones',
+                      subtitle: 'Ver clasificación actual',
+                      icon: Icons.emoji_events,
+                      color: AppColors.ocher,
+                      onTap: () {
+                        // TODO: Navigate to standings section
+                        if (onNavigate != null) {
+                          onNavigate!(MenuOption.info);
+                        }
+                      },
+                    ),
+                  ],
+                );
+              }
+            },
           ),
 
           const SizedBox(height: 40),

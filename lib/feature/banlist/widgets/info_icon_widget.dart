@@ -72,7 +72,7 @@ class InfoIconWidget extends StatelessWidget {
             child: Icon(
               Icons.info_outline,
               color: AppColors.petrolBlue,
-              size: 24,
+              size: 32,
             ),
           ),
         ),
