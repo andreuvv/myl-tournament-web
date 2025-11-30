@@ -102,6 +102,15 @@ class BanListMobileLayout extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     const InfoIconWidget(),
+                    const SizedBox(width: 8),
+                    Text(
+                      controller.lastUpdateDate,
+                      style: TextStyle(
+                        color: AppColors.beige.withOpacity(0.7),
+                        fontSize: 12,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
                   ],
                 ),
               ),

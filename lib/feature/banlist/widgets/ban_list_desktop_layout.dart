@@ -65,6 +65,15 @@ class BanListDesktopLayout extends StatelessWidget {
                       ),
                       const SizedBox(width: 12),
                       const InfoIconWidget(),
+                      const SizedBox(width: 12),
+                      Text(
+                        controller.lastUpdateDate,
+                        style: TextStyle(
+                          color: AppColors.beige.withOpacity(0.7),
+                          fontSize: 14,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
                     ],
                   ),
                 ),

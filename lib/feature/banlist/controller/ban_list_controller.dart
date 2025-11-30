@@ -70,6 +70,8 @@ class BanListController {
   BanListCategory get selectedCategory => _selectedCategory;
   BanListData? get currentData => _currentData;
 
+  String get lastUpdateDate => 'Noviembre 2025';
+
   BanListController() {
     _loadData(_selectedFormat);
   }

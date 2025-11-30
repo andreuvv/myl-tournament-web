@@ -108,7 +108,7 @@ class MainView extends StatelessWidget {
                           children: const [
                             Icon(Icons.block, color: AppColors.beige, size: 18),
                             SizedBox(width: 8),
-                            Text('Ban List Actualizada',
+                            Text('Ban List Nov 2025',
                                 style: TextStyle(color: AppColors.beige)),
                           ],
                         ),
@@ -161,7 +161,7 @@ class MainView extends StatelessWidget {
                   _buildNavButton("Info Torneo", MenuOption.info,
                       icon: Icons.info),
                   const SizedBox(width: 8),
-                  _buildNavButton("Ban List Actualizada", MenuOption.banList,
+                  _buildNavButton("Ban List Nov 2025", MenuOption.banList,
                       icon: Icons.block),
                   const SizedBox(width: 8),
                   _buildNavButton("Formatos", MenuOption.formats,

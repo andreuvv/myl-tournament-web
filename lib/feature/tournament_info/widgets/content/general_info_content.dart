@@ -40,22 +40,28 @@ class GeneralInfoContent extends StatelessWidget {
           },
           styleSheet: MarkdownStyleSheet(
             p: const TextStyle(color: AppColors.beige, fontSize: 16),
+            pPadding: const EdgeInsets.only(bottom: 12),
             h1: const TextStyle(
               color: AppColors.beige,
               fontSize: 32,
               fontWeight: FontWeight.bold,
             ),
+            h1Padding: const EdgeInsets.only(top: 16, bottom: 12),
             h2: const TextStyle(
               color: AppColors.beige,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
+            h2Padding: const EdgeInsets.only(top: 20, bottom: 10),
             h3: const TextStyle(
               color: AppColors.beige,
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
+            h3Padding: const EdgeInsets.only(top: 16, bottom: 8),
             listBullet: const TextStyle(color: AppColors.ocher),
+            listIndent: 24,
+            blockSpacing: 16,
             strong: const TextStyle(
               color: AppColors.beige,
               fontWeight: FontWeight.bold,

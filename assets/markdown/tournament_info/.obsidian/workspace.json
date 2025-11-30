@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "participants.md",
+                "file": "general.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "participants"
+              "title": "general"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "participants.md",
+                "file": "general.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for participants"
+              "title": "Backlinks for general"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "participants.md",
+                "file": "general.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from participants"
+              "title": "Outgoing links from general"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "participants.md",
+                "file": "general.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of participants"
+              "title": "Outline of general"
             }
           }
         ]
@@ -170,6 +170,7 @@
   },
   "active": "48ff86eb58d13fd7",
   "lastOpenFiles": [
+    "participants.md",
     "prizes_and_funding.md",
     "timing.md",
     "scoring.md",
