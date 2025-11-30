@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "timing.md",
+                "file": "participants.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "timing"
+              "title": "participants"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "timing.md",
+                "file": "participants.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for timing"
+              "title": "Backlinks for participants"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "timing.md",
+                "file": "participants.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from timing"
+              "title": "Outgoing links from participants"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "timing.md",
+                "file": "participants.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of timing"
+              "title": "Outline of participants"
             }
           }
         ]
@@ -170,6 +170,8 @@
   },
   "active": "48ff86eb58d13fd7",
   "lastOpenFiles": [
+    "prizes_and_funding.md",
+    "timing.md",
     "scoring.md",
     "mulligan.md",
     "md1.md",
