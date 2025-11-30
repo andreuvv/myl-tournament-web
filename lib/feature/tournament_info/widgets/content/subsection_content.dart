@@ -62,6 +62,11 @@ class SubsectionContent extends StatelessWidget {
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
+            h4: const TextStyle(
+              color: AppColors.beige,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
             listBullet: const TextStyle(color: AppColors.ocher),
             strong: const TextStyle(
               color: AppColors.beige,
