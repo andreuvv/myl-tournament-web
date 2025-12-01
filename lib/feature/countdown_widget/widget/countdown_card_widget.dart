@@ -87,7 +87,7 @@ class _CountdownCardState extends State<CountdownCard> {
                     ),
                     SizedBox(height: 4),
                     Text(
-                      "13 Diciembre, 2025 - 17:00 hrs",
+                      "13 Diciembre, 2025 - 15:00 hrs",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: AppColors.petrolBlue,
